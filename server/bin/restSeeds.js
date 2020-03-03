@@ -1,11 +1,12 @@
-// Seeds file that remove all users and create 2 new users
+// Seeds file that remove all users and create New restaurant & Dishes.
 
 // To execute this seed, run from the root of the project
-// $ node bin/seeds.js
+// $ node bin/restSeeds.js
 
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const Restaurant = require("../models/Restaurant");
+const Dish = require("../models/Dish");
 
 const bcryptSalt = 10;
 
@@ -18,8 +19,22 @@ mongoose
         console.error('Error connecting to mongo', err)
     });
 
+const arrRest = Array(29)
+    .fill()
+    .map(() => {
+        return new mongoose.mongo.ObjectId()
+    })
+
+const arrDish = Array(60)
+    .fill()
+    .map(() => {
+        return new mongoose.mongo.ObjectId()
+    })
+
+
 let restaurants = [
     {
+        _id: arrRest[0],
         name: "Los Montes de Galicia",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@losmontesdegalicia.es",
@@ -33,6 +48,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[1],
         name: "Azotea Forus Barceló",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@azoteaforus.com",
@@ -46,6 +62,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[2],
         name: "Entre Santos Madrid",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@entresantos.es",
@@ -59,6 +76,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[3],
         name: "Restaurante DCorazon",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@restaurantedcorazon.com",
@@ -72,6 +90,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[4],
         name: "El Social",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@elsocialrestaurante.com",
@@ -85,6 +104,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[5],
         name: "Fortuny Restaurant & Club",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@fortunyrestaurantclub.com",
@@ -98,6 +118,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[6],
         name: "Vinitius Gran Vía Madrid",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         address: "Gran Vía 4, 28013 Madrid, España",
@@ -109,6 +130,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[7],
         name: "Restaurante Nuevo Horno de Santa Teresa",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "lolacruz1@msn.com",
@@ -122,6 +144,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[8],
         name: "Restaurante Algarabía",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@restaurantealgarabia.com",
@@ -135,6 +158,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[9],
         name: "La Gaditana Castellana",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@tabernalagaditana.com",
@@ -148,6 +172,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[10],
         name: "Pizza 3Cruces",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@pizzatrescruces.com",
@@ -161,6 +186,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[11],
         name: "Gustazio Gastrobar",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@gustazio.com",
@@ -174,6 +200,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[12],
         name: "Pastamore",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@pastamore.es",
@@ -187,6 +214,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[13],
         name: "Davanti Food & Market",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "reservas@davantirestaurante.com",
@@ -200,6 +228,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[14],
         name: "Bombardino Café",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@bombardinocafe.com",
@@ -213,6 +242,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[15],
         name: "Oven Mozzarella Bar Fuencarral",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@oven.es",
@@ -226,6 +256,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[16],
         name: "Malafemmena",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@malafemmena.com",
@@ -239,6 +270,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[17],
         name: "Pizzeria Fratelli",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@fratellimadrid.es",
@@ -252,6 +284,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[18],
         name: "Oven Mozzarella Bar Atocha",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@oven.es",
@@ -265,6 +298,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[19],
         name: "La Pizzateca",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@lapizzateca.com",
@@ -278,6 +312,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[20],
         name: "Steakburger Gran Via",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@steakburger.es",
@@ -285,12 +320,13 @@ let restaurants = [
         photo: "https://cdn.restaurantes.com/static/img/restaurants/135/135953/135953_6085.gl.jpg",
         phone: "+34 914 21 92 50",
         web: "https://www.steakburger.es/",
-        dishes: [],
+        dishes: [`${arrDish[0]}`, `${arrDish[1]}`, `${arrDish[2]}`, `${arrDish[3]}`, `${arrDish[4]}`],
         food_type: ['Americana'],
         location: [40.4198256, -3.7016268],
         status: "active"
     },
     {
+        _id: arrRest[21],
         name: "Alright",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@alright.es",
@@ -298,12 +334,13 @@ let restaurants = [
         photo: "https://media-cdn.tripadvisor.com/media/photo-s/0d/9e/f0/fe/entrada.jpg",
         phone: "+34 912 19 07 25",
         web: "https://www.alright.es/",
-        dishes: [],
+        dishes: [`${arrDish[15]}`, `${arrDish[16]}`, `${arrDish[17]}`, `${arrDish[18]}`, `${arrDish[19]}`],
         food_type: ['Americana'],
         location: [40.4826141, -3.703422],
         status: "active"
     },
     {
+        _id: arrRest[22],
         name: "Steakburger Preciados",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@steakburger.es",
@@ -311,12 +348,13 @@ let restaurants = [
         photo: "https://cdn.restaurantes.com/static/img/restaurants/200/200083/200083_6669.gl.jpg",
         phone: "+34 910 06 70 77",
         web: "https://www.steakburger.es/",
-        dishes: [],
+        dishes: [`${arrDish[5]}`, `${arrDish[6]}`, `${arrDish[7]}`, `${arrDish[8]}`, `${arrDish[9]}`],
         food_type: ['Americana'],
         location: [40.4198392, -3.709454],
         status: "active"
     },
     {
+        _id: arrRest[23],
         name: "Sublime Dreams Food - Plaza Mayor",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@sublimedreamsfood.es",
@@ -330,6 +368,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[24],
         name: "Burnout",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@burnoutburgers.com",
@@ -343,6 +382,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[25],
         name: "Mad Cafe",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "mad@jimfoods.es",
@@ -356,6 +396,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[26],
         name: "Foodtruck",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "foodtruck@outlook.es",
@@ -369,6 +410,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[27],
         name: "Maye's Bistro",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@mayesbistro.es",
@@ -382,6 +424,7 @@ let restaurants = [
         status: "active"
     },
     {
+        _id: arrRest[28],
         name: "Steakburger - Luchana",
         password: bcrypt.hashSync("rest", bcrypt.genSaltSync(bcryptSalt)),
         email: "info@steakburger.es",
@@ -389,12 +432,236 @@ let restaurants = [
         photo: "https://console.listae.com/files/2015/12/steak_burger_luchana.jpg",
         phone: "+34 911 73 44 10",
         web: "https://www.steakburger.es/",
-        dishes: [],
+        dishes: [`${arrDish[10]}`, `${arrDish[11]}`, `${arrDish[12]}`, `${arrDish[13]}`, `${arrDish[14]}`],
         food_type: ['Americana'],
         location: [40.4302968, -3.702878],
         status: "active"
     },
 ]
+
+let dishes = [
+    {
+        _id: arrDish[0],
+        name: "Hamburguesa Steak burguer",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/07/DSC5089.jpg",
+        ingredients: ["Lechuga", "tomate", "cebolla caramelizada", "queso gouda", "exclusiva salsa STB"],
+        restaurant_id: `${arrRest[20]}`,
+        intolerances: ["Dairy"],
+        score: [4.5],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[1],
+        name: " Hamburguesa Jack burger",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/07/DSC5041-1.jpg",
+        ingredients: ["Lechuga", "tomate", "queso gouda", "bacon", "salsa bourbon", "cebolla rebozada casera"],
+        restaurant_id: `${arrRest[20]}`,
+        intolerances: ["Dairy"],
+        score: [4.4],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[2],
+        name: "Hamburguesa barbacoa",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/07/DSC5072.jpg",
+        ingredients: ["Lechuga", "tomate", "bacon", "cebolla", "queso gouda", "salsa barbacoa"],
+        restaurant_id: `${arrRest[20]}`,
+        intolerances: ["Dairy"],
+        score: [4],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[3],
+        name: "Hamburguesa La Pampa",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/07/DSC5041-1.jpg",
+        ingredients: ["Rúcula", "tomate", "cebolla caramelizada", "queso provolone", "salsa chimichurri con mayonesa."],
+        restaurant_id: `${arrRest[20]}`,
+        intolerances: ["Dairy"],
+        score: [3.5],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[4],
+        name: "Hamburguesa British",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/05/mexican.png",
+        ingredients: ["Lechuga", "tomate", "cebolla", "queso gouda", "huevo campero frito", "bacon"],
+        restaurant_id: `${arrRest[20]}`,
+        intolerances: ["Dairy", "Egg"],
+        score: [3.4],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[5],
+        name: "Hamburguesa Steak burguer",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/07/DSC5089.jpg",
+        ingredients: ["Lechuga", "tomate", "cebolla caramelizada", "queso gouda", "exclusiva salsa STB"],
+        restaurant_id: `${arrRest[22]}`,
+        intolerances: ["Dairy"],
+        score: [4.6],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[6],
+        name: " Hamburguesa Jack burger",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/07/DSC5041-1.jpg",
+        ingredients: ["Lechuga", "tomate", "queso gouda", "bacon", "salsa bourbon", "cebolla rebozada casera"],
+        restaurant_id: `${arrRest[22]}`,
+        intolerances: ["Dairy"],
+        score: [4.3],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[7],
+        name: "Hamburguesa barbacoa",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/07/DSC5072.jpg",
+        ingredients: ["Lechuga", "tomate", "bacon", "cebolla", "queso gouda", "salsa barbacoa"],
+        restaurant_id: `${arrRest[22]}`,
+        intolerances: ["Dairy"],
+        score: [4.1],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[8],
+        name: "Hamburguesa La Pampa",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/07/DSC5041-1.jpg",
+        ingredients: ["Rúcula", "tomate", "cebolla caramelizada", "queso provolone", "salsa chimichurri con mayonesa."],
+        restaurant_id: `${arrRest[22]}`,
+        intolerances: ["Dairy"],
+        score: [3.8],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[9],
+        name: "Hamburguesa British",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/05/mexican.png",
+        ingredients: ["Lechuga", "tomate", "cebolla", "queso gouda", "huevo campero frito", "bacon"],
+        restaurant_id: `${arrRest[22]}`,
+        intolerances: ["Dairy", "Egg"],
+        score: [3.6],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[10],
+        name: "Hamburguesa Steak burguer",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/07/DSC5089.jpg",
+        ingredients: ["Lechuga", "tomate", "cebolla caramelizada", "queso gouda", "exclusiva salsa STB"],
+        restaurant_id: `${arrRest[28]}`,
+        intolerances: ["Dairy"],
+        score: [4.6],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[11],
+        name: " Hamburguesa Jack burger",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/07/DSC5041-1.jpg",
+        ingredients: ["Lechuga", "tomate", "queso gouda", "bacon", "salsa bourbon", "cebolla rebozada casera"],
+        restaurant_id: `${arrRest[28]}`,
+        intolerances: ["Dairy"],
+        score: [4.4],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[12],
+        name: "Hamburguesa barbacoa",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/07/DSC5072.jpg",
+        ingredients: ["Lechuga", "tomate", "bacon", "cebolla", "queso gouda", "salsa barbacoa"],
+        restaurant_id: `${arrRest[28]}`,
+        intolerances: ["Dairy"],
+        score: [4.3],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[13],
+        name: "Hamburguesa La Pampa",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/07/DSC5041-1.jpg",
+        ingredients: ["Rúcula", "tomate", "cebolla caramelizada", "queso provolone", "salsa chimichurri con mayonesa."],
+        restaurant_id: `${arrRest[28]}`,
+        intolerances: ["Dairy"],
+        score: [3.4],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[14],
+        name: "Hamburguesa British",
+        photo: "https://www.steakburger.es/wp-content/uploads/2019/05/mexican.png",
+        ingredients: ["Lechuga", "tomate", "cebolla", "queso gouda", "huevo campero frito", "bacon"],
+        restaurant_id: `${arrRest[28]}`,
+        intolerances: ["Dairy", "Egg"],
+        score: [3.7],
+        comments: [],
+        price: 11.89
+    },
+    {
+        _id: arrDish[15],
+        name: "Hamburguesa Doublechin",
+        photo: "https://www.alright.es/wp-content/uploads/2019/06/quienes-somos.jpg",
+        ingredients: ["Papada Iberica", "Mayo japokimuchi", "cebolla encurtida"],
+        restaurant_id: `${arrRest[21]}`,
+        intolerances: ["Dairy"],
+        score: [4.4],
+        comments: [],
+        price: 12.50
+    },
+    {
+        _id: arrDish[16],
+        name: "Hamburguesa Nebraska Brisket",
+        photo: "https://www.googleapis.com/download/storage/v1/b/static-goxo/o/dishes%2F156121015423407886669147624878.JPEG?generation=1561210154348592&alt=media",
+        ingredients: ["Angus de Nebraska", "Cebolla pochada y flambeada", "Salsa ahumada", "Queso Monterrey Jack"],
+        restaurant_id: `${arrRest[21]}`,
+        intolerances: ["Dairy"],
+        score: [4.6],
+        comments: [],
+        price: 13.50
+    },
+    {
+        _id: arrDish[17],
+        name: "Hamburguesa Memphis pulled pork",
+        photo: "https://desora.co/wp-content/uploads/2018/09/1-3.jpg",
+        ingredients: ["Costilla de cerdo", "cadera de cerdo", "queso"],
+        restaurant_id: `${arrRest[21]}`,
+        intolerances: ["Dairy"],
+        score: [3],
+        comments: [],
+        price: 11.90
+    },
+    {
+        _id: arrDish[18],
+        name: "Hamburguesa Chrysler Cheeseburger",
+        photo: "https://desora.co/wp-content/uploads/2018/09/1-3.jpg",
+        ingredients: ["Lechuga", "tomate", "queso cheddar"],
+        restaurant_id: `${arrRest[21]}`,
+        intolerances: ["Dairy"],
+        score: [4],
+        comments: [],
+        price: 11.90
+    },
+    {
+        _id: arrDish[19],
+        name: "Hamburguesa Chrysler Cheeseburger",
+        photo: "https://desora.co/wp-content/uploads/2018/09/1-3.jpg",
+        ingredients: ["Lechuga", "tomate", "queso cheddar"],
+        restaurant_id: `${arrRest[21]}`,
+        intolerances: ["Dairy"],
+        score: [4],
+        comments: [],
+        price: 11.90
+    },
+]
+
 
 Restaurant.deleteMany()
     .then(() => {
@@ -402,7 +669,23 @@ Restaurant.deleteMany()
     })
     .then(restCreated => {
         console.log(`${restCreated.length} restaurant created!`);
-        // console.log(restCreated.map(u => u._id));
+    })
+    .then(() => {
+        // Close properly the connection to Mongoose
+        mongoose.disconnect()
+    })
+    .catch(err => {
+        mongoose.disconnect()
+        throw err
+    })
+
+
+Dish.deleteMany()
+    .then(() => {
+        return Dish.create(dishes)
+    })
+    .then(dishesCreated => {
+        console.log(`${dishesCreated.length} dishes created!`);
     })
     .then(() => {
         // Close properly the connection to Mongoose
