@@ -1,36 +1,13 @@
 import React, { Component } from "react";
-
-import DishsServices from "../../../services/dish.services";
-
+import DishesServices from "../../../services/dish.services";
 import DishForm from "../dishForm/DishForm";
-import DishCard from "./DishCard";
 import "./Homepage.scss";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
 
 class Homepage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dishs: [],
-      showmodal: false
-    };
-    this.services = new DishsServices();
-  }
-
-  // componentDidMount = () => this.getAllDishs()
-
-  // getAllDishs = () => {
-  //     this.services.getAllDishs()
-  //         .then(allDishs => this.setState({ dishs: allDishs }))
-  //         .catch(err => console.log(err))
-  // }
-
-  // closeModal = () => this.setState({ showmodal: false })
-  // openModal = () => this.setState({ showmodal: true })
-
   render() {
     return (
       <Container className="homepage">
@@ -40,7 +17,9 @@ class Homepage extends Component {
             <h3>Busca el lugar, encuentra tu plato</h3>
             <div className="searchBar">
               <input type="text" placeholder="Ej. Spaghetti" />
-              <button>Buscar</button>
+              <Link to="/dishes/all">
+                <button>Buscar</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -64,9 +43,9 @@ class Homepage extends Component {
         </footer>
         {/* {this.props.loggedInUser && <Button className="mb-20" variant="dark" onClick={this.openModal}>Crear Montaña rusa</Button>}
 
-                {this.state.dishs.length ? (
+                {this.state.dishes.length ? (
                     <Row>
-                        {this.state.dishs.map(elm => <DishCard key={elm._id} {...elm} />)}
+                        {this.state.dishes.map(elm => <DishCard key={elm._id} {...elm} />)}
                     </Row>
                 )
                     :
@@ -83,7 +62,7 @@ class Homepage extends Component {
                     <Modal.Body>
                         <h3>Listado platos</h3>
                         <hr></hr>
-                        <DishForm closeModal={this.closeModal} refreshList={this.getAllDishs} />
+                        <DishForm closeModal={this.closeModal} refreshList={this.getAllDishes} />
                     </Modal.Body>
                 </Modal> */}
       </Container>

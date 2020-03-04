@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import DishsServices from '../../../services/dish.services'
+import DishesServices from '../../../services/dish.services'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -11,7 +11,7 @@ class DishForm extends Component {
 
     constructor(props) {
         super(props)
-        this.dishServices = new DishsServices()
+        this.dishServices = new DishesServices()
         this.filesServices = new FilesServices()
         this.state = {
             dish: {

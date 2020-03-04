@@ -12,26 +12,30 @@ authRoutes.post('/signup', (req, res, next) => {
     console.log("------ PAYLOAD EN DESTINO -----", req.body)
     const username = req.body.username;
     const password = req.body.password;
+    const email = req.body.email;
 
-    if (!username || !password) {
-        res.status(400).json({ message: 'Provide username and password' });
+    if (!username || !password || !email) {
+        console.log("hueco vacio")
+        res.status(400).json({ message: 'Escribe un nombre de usuario, email y contraseña' });
         return;
     }
 
     if (password.length < 7) {
-        res.status(400).json({ message: 'Please make your password at least 8 characters long for security purposes.' });
+        console.log("contraseña corta")
+        res.status(400).json({ message: 'Por favor, escribe una contraseña de mínimo 8 caracteres.' });
         return;
     }
 
     User.findOne({ username }, (err, foundUser) => {
 
         if (err) {
-            res.status(500).json({ message: "Username check went bad." });
+            res.status(500).json({ message: "Check del usuario fue mal" });
             return;
         }
 
         if (foundUser) {
-            res.status(400).json({ message: 'Username taken. Choose another one.' });
+            console.log("usuario ya existe")
+            res.status(400).json({ message: 'Nombre de usuario ya existente, ¡elige otro!' });
             return;
         }
 
@@ -40,12 +44,13 @@ authRoutes.post('/signup', (req, res, next) => {
 
         const aNewUser = new User({
             username: username,
-            password: hashPass
+            password: hashPass,
+            email: email
         });
 
         aNewUser.save(err => {
             if (err) {
-                res.status(400).json({ message: 'Saving user to database went wrong.' });
+                res.status(400).json({ message: 'Error al guardar en la database.' });
                 return;
             }
 
@@ -54,7 +59,7 @@ authRoutes.post('/signup', (req, res, next) => {
             req.login(aNewUser, (err) => {
 
                 if (err) {
-                    res.status(500).json({ message: 'Login after signup went bad.' });
+                    res.status(500).json({ message: 'Login despues signup fue mal.' });
                     return;
                 }
 
@@ -65,10 +70,6 @@ authRoutes.post('/signup', (req, res, next) => {
         });
     });
 });
-
-
-
-
 
 
 authRoutes.post('/login', (req, res, next) => {

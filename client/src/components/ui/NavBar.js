@@ -32,7 +32,7 @@ class Navigation extends Component {
       );
 
     return this.props.loggedInUser ? (
-      <Navbar className="navbar">
+      <Navbar className="navbar" expand="lg" variant="dark">
         <Navbar.Brand href="/">
           <img
             src="../../../Appetitoso_logo_white.svg"
@@ -51,7 +51,7 @@ class Navigation extends Component {
         </Navbar.Collapse>
       </Navbar>
     ) : (
-        <Navbar className="navbar">
+        <Navbar className="navbar" expand="lg" variant="dark">
           <Navbar.Brand href="/">
             <img
               src="../../../Appetitoso_logo_white.svg"
@@ -68,7 +68,7 @@ class Navigation extends Component {
               </Nav.Link>
               <Nav.Link as="div">
                 {" "}
-                <Link to="/login">Inicio sesión</Link>
+                <Link to="/login" className="prueba">Inicio sesión</Link>
               </Nav.Link>
               {/* <Nav.Link as="small">{greeting}</Nav.Link> */}
             </Nav>

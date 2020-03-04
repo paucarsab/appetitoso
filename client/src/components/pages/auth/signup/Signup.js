@@ -6,13 +6,15 @@ import Container from 'react-bootstrap/Container'
 
 import AuthServices from '../../../../services/auth.services'
 
+
 class Signup extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            email: ''
         }
         this.services = new AuthServices()
     }
@@ -26,7 +28,7 @@ class Signup extends Component {
     postUser = () => {
         this.services.signup(this.state)
             .then(theLoggedNewUser => {
-                this.setState({ username: '', password: '' })
+                this.setState({ username: '', password: '', email: '' })
                 this.props.setTheUser(theLoggedNewUser)
             })
             .catch(err => console.log({ err }))
@@ -50,6 +52,10 @@ class Signup extends Component {
                     <Form.Group>
                         <Form.Label>Usuario</Form.Label>
                         <Form.Control type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="text" name="email" value={this.state.email} onChange={this.handleChange} />
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>Contraseña</Form.Label>

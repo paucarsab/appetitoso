@@ -448,7 +448,7 @@ let dishes = [
         restaurant_id: `${arrRest[20]}`,
         intolerances: ["Dairy"],
         score: [4.5],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -459,7 +459,7 @@ let dishes = [
         restaurant_id: `${arrRest[20]}`,
         intolerances: ["Dairy"],
         score: [4.4],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -470,7 +470,7 @@ let dishes = [
         restaurant_id: `${arrRest[20]}`,
         intolerances: ["Dairy"],
         score: [4],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -481,7 +481,7 @@ let dishes = [
         restaurant_id: `${arrRest[20]}`,
         intolerances: ["Dairy"],
         score: [3.5],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -492,7 +492,7 @@ let dishes = [
         restaurant_id: `${arrRest[20]}`,
         intolerances: ["Dairy", "Egg"],
         score: [3.4],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -503,7 +503,7 @@ let dishes = [
         restaurant_id: `${arrRest[22]}`,
         intolerances: ["Dairy"],
         score: [4.6],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -514,7 +514,7 @@ let dishes = [
         restaurant_id: `${arrRest[22]}`,
         intolerances: ["Dairy"],
         score: [4.3],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -525,7 +525,7 @@ let dishes = [
         restaurant_id: `${arrRest[22]}`,
         intolerances: ["Dairy"],
         score: [4.1],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -536,7 +536,7 @@ let dishes = [
         restaurant_id: `${arrRest[22]}`,
         intolerances: ["Dairy"],
         score: [3.8],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -547,7 +547,7 @@ let dishes = [
         restaurant_id: `${arrRest[22]}`,
         intolerances: ["Dairy", "Egg"],
         score: [3.6],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -558,7 +558,7 @@ let dishes = [
         restaurant_id: `${arrRest[28]}`,
         intolerances: ["Dairy"],
         score: [4.6],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -569,7 +569,7 @@ let dishes = [
         restaurant_id: `${arrRest[28]}`,
         intolerances: ["Dairy"],
         score: [4.4],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -580,7 +580,7 @@ let dishes = [
         restaurant_id: `${arrRest[28]}`,
         intolerances: ["Dairy"],
         score: [4.3],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -591,7 +591,7 @@ let dishes = [
         restaurant_id: `${arrRest[28]}`,
         intolerances: ["Dairy"],
         score: [3.4],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -602,7 +602,7 @@ let dishes = [
         restaurant_id: `${arrRest[28]}`,
         intolerances: ["Dairy", "Egg"],
         score: [3.7],
-        comments: [],
+        comments: ["Genial"],
         price: 11.89
     },
     {
@@ -613,7 +613,7 @@ let dishes = [
         restaurant_id: `${arrRest[21]}`,
         intolerances: ["Dairy"],
         score: [4.4],
-        comments: [],
+        comments: ["Genial"],
         price: 12.50
     },
     {
@@ -624,7 +624,7 @@ let dishes = [
         restaurant_id: `${arrRest[21]}`,
         intolerances: ["Dairy"],
         score: [4.6],
-        comments: [],
+        comments: ["Genial"],
         price: 13.50
     },
     {
@@ -635,7 +635,7 @@ let dishes = [
         restaurant_id: `${arrRest[21]}`,
         intolerances: ["Dairy"],
         score: [3],
-        comments: [],
+        comments: ["Genial"],
         price: 11.90
     },
     {
@@ -646,7 +646,7 @@ let dishes = [
         restaurant_id: `${arrRest[21]}`,
         intolerances: ["Dairy"],
         score: [4],
-        comments: [],
+        comments: ["Genial"],
         price: 11.90
     },
     {
@@ -657,7 +657,7 @@ let dishes = [
         restaurant_id: `${arrRest[23]}`,
         intolerances: ["Dairy", "Peanuts", "Soy", "Tree Nuts"],
         score: [4.2],
-        comments: [],
+        comments: ["Genial"],
         price: 13.50
     },
     {
@@ -668,7 +668,7 @@ let dishes = [
         restaurant_id: `${arrRest[23]}`,
         intolerances: ["Dairy", "Gluten"],
         score: [4.3],
-        comments: [],
+        comments: ["Genial"],
         price: 13.50
     },
     {
@@ -679,7 +679,7 @@ let dishes = [
         restaurant_id: `${arrRest[23]}`,
         intolerances: ["Dairy", "Gluten", "Soy", "Sulphur Dioxide"],
         score: [4],
-        comments: [],
+        comments: ["Genial"],
         price: 11.95
     },
     {
@@ -690,7 +690,7 @@ let dishes = [
         restaurant_id: `${arrRest[23]}`,
         intolerances: ["Dairy", "Gluten", "Tree Nuts"],
         score: [4.3],
-        comments: [],
+        comments: ["Genial"],
         price: 11.95
     },
     {
@@ -701,7 +701,7 @@ let dishes = [
         restaurant_id: `${arrRest[24]}`,
         intolerances: ["Gluten"],
         score: [3.9],
-        comments: [],
+        comments: ["Genial"],
         price: 8.75
     },
     {
@@ -712,7 +712,7 @@ let dishes = [
         restaurant_id: `${arrRest[24]}`,
         intolerances: ["Dairy", "Gluten", "Egg"],
         score: [4.1],
-        comments: [],
+        comments: ["Genial"],
         price: 10.50
     },
     {
@@ -723,7 +723,7 @@ let dishes = [
         restaurant_id: `${arrRest[24]}`,
         intolerances: ["Dairy", "Gluten", "Sulphur Dioxide"],
         score: [4.6],
-        comments: [],
+        comments: ["Genial"],
         price: 10.95
     },
     {
@@ -734,7 +734,7 @@ let dishes = [
         restaurant_id: `${arrRest[24]}`,
         intolerances: ["Dairy", "Gluten", "Sulphur Dioxide"],
         score: [4.5],
-        comments: [],
+        comments: ["Genial"],
         price: 10.75
     },
     {
@@ -745,7 +745,7 @@ let dishes = [
         restaurant_id: `${arrRest[24]}`,
         intolerances: ["Dairy", "Gluten"],
         score: [4.5],
-        comments: [],
+        comments: ["Genial"],
         price: 9.90
     },
     {
@@ -756,7 +756,7 @@ let dishes = [
         restaurant_id: `${arrRest[25]}`,
         intolerances: ["Sulphur Dioxide"],
         score: [3.5],
-        comments: [],
+        comments: ["Genial"],
         price: 8.90
     },
     {
@@ -767,7 +767,7 @@ let dishes = [
         restaurant_id: `${arrRest[25]}`,
         intolerances: ["Sulphur Dioxide", "Dairy"],
         score: [3.8],
-        comments: [],
+        comments: ["Genial"],
         price: 9.70
     },
     {
@@ -778,7 +778,7 @@ let dishes = [
         restaurant_id: `${arrRest[25]}`,
         intolerances: ["Sulphur Dioxide", "Dairy"],
         score: [4.4],
-        comments: [],
+        comments: ["Genial"],
         price: 11.90
     },
     {
@@ -789,7 +789,7 @@ let dishes = [
         restaurant_id: `${arrRest[25]}`,
         intolerances: ["Sulphur Dioxide", "Dairy", "Mustard"],
         score: [4.5],
-        comments: [],
+        comments: ["Genial"],
         price: 10.90
     },
     {
@@ -800,7 +800,7 @@ let dishes = [
         restaurant_id: `${arrRest[25]}`,
         intolerances: ["Sulphur Dioxide", "Dairy", "Celery"],
         score: [4.3],
-        comments: [],
+        comments: ["Genial"],
         price: 11.90
     },
     {
@@ -811,7 +811,7 @@ let dishes = [
         restaurant_id: `${arrRest[26]}`,
         intolerances: ["Sulphur Dioxide", "Dairy", "Egg"],
         score: [4.2],
-        comments: [],
+        comments: ["Genial"],
         price: 9.00
     },
     {
@@ -822,7 +822,7 @@ let dishes = [
         restaurant_id: `${arrRest[26]}`,
         intolerances: ["Sulphur Dioxide", "Dairy"],
         score: [3.5],
-        comments: [],
+        comments: ["Genial"],
         price: 9.00
     },
     {
@@ -833,7 +833,7 @@ let dishes = [
         restaurant_id: `${arrRest[26]}`,
         intolerances: ["Sulphur Dioxide", "Dairy"],
         score: [4.7],
-        comments: [],
+        comments: ["Genial"],
         price: 12.50
     },
     {
@@ -844,7 +844,7 @@ let dishes = [
         restaurant_id: `${arrRest[26]}`,
         intolerances: ["Sulphur Dioxide", "Dairy", "Tree Nuts", "Peanuts"],
         score: [4.7],
-        comments: [],
+        comments: ["Genial"],
         price: 12.50
     },
     {
@@ -855,7 +855,7 @@ let dishes = [
         restaurant_id: `${arrRest[27]}`,
         intolerances: ["Sulphur Dioxide", "Dairy", "Mustard"],
         score: [4.6],
-        comments: [],
+        comments: ["Genial"],
         price: 12.50
     },
     {
@@ -866,7 +866,7 @@ let dishes = [
         restaurant_id: `${arrRest[27]}`,
         intolerances: ["Sulphur Dioxide", "Dairy", "Soy", "Sesame"],
         score: [4.8],
-        comments: [],
+        comments: ["Genial"],
         price: 11.90
     },
     {
@@ -877,7 +877,7 @@ let dishes = [
         restaurant_id: `${arrRest[27]}`,
         intolerances: ["Sulphur Dioxide", "Dairy", "Soy"],
         score: [4.7],
-        comments: [],
+        comments: ["Genial"],
         price: 12.90
     },
     {
@@ -888,7 +888,7 @@ let dishes = [
         restaurant_id: `${arrRest[27]}`,
         intolerances: ["Sulphur Dioxide", "Dairy", "Soy", "Mustard"],
         score: [4.7],
-        comments: [],
+        comments: ["Genial"],
         price: 11.75
     },
     {
@@ -899,7 +899,7 @@ let dishes = [
         restaurant_id: `${arrRest[27]}`,
         intolerances: ["Sulphur Dioxide", "Dairy", "Celery", "Peanuts", "Lupin"],
         score: [4.9],
-        comments: [],
+        comments: ["Genial"],
         price: 12.95
     },
     {
@@ -910,7 +910,7 @@ let dishes = [
         restaurant_id: `${arrRest[27]}`,
         intolerances: ["Dairy"],
         score: [4.7],
-        comments: [],
+        comments: ["Genial"],
         price: 4.95
     },
     {
@@ -921,7 +921,7 @@ let dishes = [
         restaurant_id: `${arrRest[27]}`,
         intolerances: ["Dairy"],
         score: [4.6],
-        comments: [],
+        comments: ["Genial"],
         price: 4.95
     },
     {
@@ -932,7 +932,7 @@ let dishes = [
         restaurant_id: `${arrRest[25]}`,
         intolerances: ["Dairy"],
         score: [4.3],
-        comments: [],
+        comments: ["Genial"],
         price: 4.50
     },
     {
@@ -943,7 +943,7 @@ let dishes = [
         restaurant_id: `${arrRest[24]}`,
         intolerances: ["Dairy"],
         score: [4.4],
-        comments: [],
+        comments: ["Genial"],
         price: 3.95
     },
     {
@@ -954,7 +954,7 @@ let dishes = [
         restaurant_id: `${arrRest[20]}`,
         intolerances: ["Dairy"],
         score: [3.9],
-        comments: [],
+        comments: ["Genial"],
         price: 6.90
     },
     {
@@ -965,7 +965,7 @@ let dishes = [
         restaurant_id: `${arrRest[20]}`,
         intolerances: ["Dairy"],
         score: [4.7],
-        comments: [],
+        comments: ["Genial"],
         price: 5.50
     },
     {
@@ -976,7 +976,7 @@ let dishes = [
         restaurant_id: `${arrRest[20]}`,
         intolerances: ["Dairy"],
         score: [4.1],
-        comments: [],
+        comments: ["Genial"],
         price: 5.90
     },
     {
@@ -987,7 +987,7 @@ let dishes = [
         restaurant_id: `${arrRest[22]}`,
         intolerances: ["Dairy"],
         score: [4.9],
-        comments: [],
+        comments: ["Genial"],
         price: 6.90
     },
     {
@@ -998,7 +998,7 @@ let dishes = [
         restaurant_id: `${arrRest[22]}`,
         intolerances: ["Dairy"],
         score: [4.8],
-        comments: [],
+        comments: ["Genial"],
         price: 5.50
     },
     {
@@ -1009,7 +1009,7 @@ let dishes = [
         restaurant_id: `${arrRest[22]}`,
         intolerances: ["Dairy"],
         score: [4.2],
-        comments: [],
+        comments: ["Genial"],
         price: 5.90
     },
     {
@@ -1020,7 +1020,7 @@ let dishes = [
         restaurant_id: `${arrRest[28]}`,
         intolerances: ["Dairy"],
         score: [4.5],
-        comments: [],
+        comments: ["Genial"],
         price: 6.90
     },
     {
@@ -1031,7 +1031,7 @@ let dishes = [
         restaurant_id: `${arrRest[28]}`,
         intolerances: ["Dairy"],
         score: [4.4],
-        comments: [],
+        comments: ["Genial"],
         price: 5.50
     },
     {
@@ -1042,7 +1042,7 @@ let dishes = [
         restaurant_id: `${arrRest[28]}`,
         intolerances: ["Dairy"],
         score: [4.3],
-        comments: [],
+        comments: ["Genial"],
         price: 5.90
     },
 ]

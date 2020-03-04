@@ -14,6 +14,7 @@ import Profile from './components/pages/profile/Profile'
 import Login from './components/pages/auth/login/Login'
 
 import AuthServices from './services/auth.services'
+import DishList from './components/pages/dishList/DishList';
 
 class App extends Component {
 
@@ -48,6 +49,7 @@ class App extends Component {
           <Route path="/signup" render={() => <Signup setTheUser={this.setTheUser} />} />
           <Route path="/login" render={props => <Login setTheUser={this.setTheUser} {...props} />} />
           <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+          <Route exact path="/dishes/all" render={() => <DishList loggedInUser={this.state.loggedInUser} />} />
         </Switch>
       </>
 

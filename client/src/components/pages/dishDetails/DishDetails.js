@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import dishsServices from '../../../services/dish.services'
+import dishesServices from '../../../services/dish.services'
 
 import './dish-details.css'
 
@@ -16,7 +16,7 @@ class dishDetails extends Component {
     constructor(props) {
         super(props)
         this.state = { dish: {} }
-        this.services = new dishsServices()
+        this.services = new dishesServices()
 
         console.log('las props por defecto serían estas:', this.props)
     }
