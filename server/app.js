@@ -15,8 +15,9 @@ require('./configs/session.config')(app)
 
 
 // Base URLS
-app.use('/api/auth', require('./routes/auth.routes'))
-app.use('/api/coasters', require('./routes/coasters.routes'))
+app.use('/auth', require('./routes/auth.routes'))
+app.use('/dishes', require('./routes/dishes.routes'))
+app.use('/dishes', require('./routes/dishes.routes'))
 app.use('/api/files', require('./routes/files.routes.js'))
 
 module.exports = app

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import CoastersServices from '../../../services/coaster.services'
+import dishsServices from '../../../services/dish.services'
 
-import './coaster-details.css'
+import './dish-details.css'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -11,39 +11,39 @@ import Button from 'react-bootstrap/Button'
 
 import { Link } from 'react-router-dom'
 
-class CoasterDetails extends Component {
+class dishDetails extends Component {
 
     constructor(props) {
         super(props)
-        this.state = { coaster: {} }
-        this.services = new CoastersServices()
+        this.state = { dish: {} }
+        this.services = new dishsServices()
 
         console.log('las props por defecto serían estas:', this.props)
     }
 
-    componentDidMount = () => this.getCoasterDetails()
+    componentDidMount = () => this.getdishDetails()
 
-    getCoasterDetails = () => {
-        this.services.getCoasterDetails(this.props.match.params.id)
-            .then(theCoaster => this.setState({ coaster: theCoaster }))
+    getdishDetails = () => {
+        this.services.getdishDetails(this.props.match.params.id)
+            .then(thedish => this.setState({ dish: thedish }))
             .catch(err => console.log(err))
     }
 
     render() {
 
         return (
-            <Container className="coaster-details">
-                <h1>{this.state.coaster.title}</h1>
+            <Container className="dish-details">
+                <h1>{this.state.dish.title}</h1>
                 <Row>
                     <Col md={{ span: 4, offset: 1 }}>
                         <h3>Stats</h3>
                         <hr></hr>
-                        <p>Descripción: {this.state.coaster.description}</p>
-                        <p>Inversiones: {this.state.coaster.inversions}</p>
-                        <p>Longitud: {this.state.coaster.length}</p>
+                        <p>Descripción: {this.state.dish.description}</p>
+                        <p>Inversiones: {this.state.dish.inversions}</p>
+                        <p>Longitud: {this.state.dish.length}</p>
                     </Col>
                     <Col md={{ span: 5, offset: 1 }}>
-                        <img src={this.state.coaster.imageUrl} alt={this.state.coaster.title}></img>
+                        <img src={this.state.dish.imageUrl} alt={this.state.dish.title}></img>
                     </Col>
                 </Row>
                 <Button as="div" variant="dark" size="sm">
@@ -54,4 +54,4 @@ class CoasterDetails extends Component {
     }
 }
 
-export default CoasterDetails
+export default dishDetails

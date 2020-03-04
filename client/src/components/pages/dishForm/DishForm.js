@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 
-import CoastersServices from '../../../services/coaster.services'
+import DishsServices from '../../../services/dish.services'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 import FilesServices from '../../../services/files.services'
 
-class CoasterForm extends Component {
+class DishForm extends Component {
 
     constructor(props) {
         super(props)
-        this.coasterServices = new CoastersServices()
+        this.dishServices = new DishsServices()
         this.filesServices = new FilesServices()
         this.state = {
-            coaster: {
+            dish: {
                 title: '',
                 description: '',
                 length: '',
@@ -29,8 +29,8 @@ class CoasterForm extends Component {
         this.props.refreshList()
     }
 
-    postCoaster = () => {
-        this.coasterServices.postCoaster(this.state.coaster)
+    postDish = () => {
+        this.dishServices.postDish(this.state.dish)
             .then(() => this.finishAction())
             .catch(err => console.log(err))
     }
@@ -38,13 +38,13 @@ class CoasterForm extends Component {
     handleChange = e => {
         let { name, value } = e.target
         this.setState({
-            coaster: { ...this.state.coaster, [name]: value }
+            dish: { ...this.state.dish, [name]: value }
         })
     }
 
     handleSubmit = e => {
         e.preventDefault()
-        this.postCoaster()
+        this.postDish()
     }
 
     handleFileUpload = e => {
@@ -54,7 +54,7 @@ class CoasterForm extends Component {
             .then(response => {
                 console.log('Subida de archivo finalizada! La URL de Cloudinray es: ', response.secure_url)
                 this.setState({
-                    coaster: { ...this.state.coaster, imageUrl: response.secure_url }
+                    dish: { ...this.state.dish, imageUrl: response.secure_url }
                 })
             })
             .catch(err => console.log(err))
@@ -66,24 +66,24 @@ class CoasterForm extends Component {
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
                     <Form.Label>Nombre</Form.Label>
-                    <Form.Control type="text" name="title" value={this.state.coaster.title} onChange={this.handleChange} />
+                    <Form.Control type="text" name="title" value={this.state.dish.title} onChange={this.handleChange} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Descripción</Form.Label>
-                    <Form.Control type="text" name="description" value={this.state.coaster.description} onChange={this.handleChange} />
+                    <Form.Control type="text" name="description" value={this.state.dish.description} onChange={this.handleChange} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Longitud</Form.Label>
-                    <Form.Control type="number" name="length" value={this.state.coaster.length} onChange={this.handleChange} />
+                    <Form.Control type="number" name="length" value={this.state.dish.length} onChange={this.handleChange} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Inversiones</Form.Label>
-                    <Form.Control type="number" name="inversions" value={this.state.coaster.inversions} onChange={this.handleChange} />
+                    <Form.Control type="number" name="inversions" value={this.state.dish.inversions} onChange={this.handleChange} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Imagen</Form.Label>
                     <Form.Control type="file" name="imageUrl" onChange={this.handleFileUpload} />
-                    {/* <Form.Control type="text" name="imageUrl" value={this.state.coaster.imageUrl} onChange={this.handleChange} /> */}
+                    {/* <Form.Control type="text" name="imageUrl" value={this.state.dish.imageUrl} onChange={this.handleChange} /> */}
                 </Form.Group>
 
                 <Button variant="dark" type="submit">Crear nueva Montaña</Button>
@@ -92,4 +92,4 @@ class CoasterForm extends Component {
     }
 }
 
-export default CoasterForm
+export default DishForm

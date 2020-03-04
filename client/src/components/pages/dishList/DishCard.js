@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './CoasterCard.css'
+import './DishCard.css'
 
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
@@ -8,7 +8,7 @@ import Card from 'react-bootstrap/Card'
 
 import { Link } from 'react-router-dom'
 
-const CoasterCard = ({ title, imageUrl, _id }) => {
+const DishCard = ({ title, imageUrl, _id }) => {
     return (
         <Col md={4}>
             <Card className="card-rusa">
@@ -25,4 +25,4 @@ const CoasterCard = ({ title, imageUrl, _id }) => {
     )
 }
 
-export default CoasterCard
+export default DishCard

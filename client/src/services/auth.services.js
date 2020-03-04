@@ -4,7 +4,7 @@ export default class Services {
 
     constructor() {
         this.service = axios.create({
-            baseURL: 'http://localhost:4000/api/auth',
+            baseURL: 'http://localhost:4000/auth',
             withCredentials: true
         })
     }

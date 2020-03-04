@@ -5,8 +5,8 @@ import './App.css';
 
 import { Switch, Route, Redirect } from 'react-router-dom'
 
-import CoastersList from './components/pages/coasterList/CoasterList'
-import CoasterDetails from './components/pages/coasterDetails/CoasterDetails'
+import Homepage from './components/pages/dishList/Homepage'
+// import DishDetails from './components/pages/dishDetails/DishDetails'
 import NavBar from './components/ui/NavBar'
 
 import Signup from './components/pages/auth/signup/Signup'
@@ -43,8 +43,8 @@ class App extends Component {
         <NavBar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
 
         <Switch>
-          <Route exact path="/" render={() => <CoastersList loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/detalles/:id" render={props => <CoasterDetails {...props} />} />
+          <Route exact path="/" render={() => <Homepage loggedInUser={this.state.loggedInUser} />} />
+          {/* <Route path="/detalles/:id" render={props => <DishDetails {...props} />} /> */}
           <Route path="/signup" render={() => <Signup setTheUser={this.setTheUser} />} />
           <Route path="/login" render={props => <Login setTheUser={this.setTheUser} {...props} />} />
           <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />

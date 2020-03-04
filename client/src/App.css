@@ -1,9 +1,15 @@
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: Ubuntu,
+    Arial,
+    sans-serif;
   font-weight: 200;
+  background-color: #FFFFFF;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 200;
 }
 
@@ -15,8 +21,9 @@ h1 {
   margin-bottom: 20px;
 }
 
-a, a:hover {
-    color: inherit;
+a,
+a:hover {
+  color: inherit;
 }
 
 .container {

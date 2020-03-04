@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import "./NavBar.scss"
 
 import AuthServices from "../../services/auth.services";
 
@@ -27,21 +28,21 @@ class Navigation extends Component {
     const greeting = this.props.loggedInUser ? (
       <>Bienvenid@, {this.props.loggedInUser.username}</>
     ) : (
-      <>Hola, invitad@</>
-    );
+        <>Hola, invitad@</>
+      );
 
     return this.props.loggedInUser ? (
-      <Navbar bg="dark" expand="lg" variant="dark">
+      <Navbar className="navbar">
         <Navbar.Brand href="/">
           <img
-            src="../../../Appetitoso_logo_rosa.svg"
+            src="../../../Appetitoso_logo_white.svg"
             alt="appetitoso-logo-pink"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse >
           <Nav className="ml-auto">
-            <Nav.Link as="small">
+            <Nav.Link as="div">
               <Link to="/profile">{greeting}</Link>
             </Nav.Link>
             <Nav.Link as="div"> </Nav.Link>
@@ -50,30 +51,30 @@ class Navigation extends Component {
         </Navbar.Collapse>
       </Navbar>
     ) : (
-      <Navbar bg="dark" expand="lg" variant="dark">
-        <Navbar.Brand href="/">
-          <img
-            src="../../../Appetitoso_logo_rosa.svg"
-            alt="appetitoso-logo-pink"
-          />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
-            <Nav.Link as="div"> </Nav.Link>
-            <Nav.Link as="div">
-              {" "}
-              <Link to="/signup">Registro</Link>
-            </Nav.Link>
-            <Nav.Link as="div">
-              {" "}
-              <Link to="/login">Inicio sesión</Link>
-            </Nav.Link>
-            {/* <Nav.Link as="small">{greeting}</Nav.Link> */}
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    );
+        <Navbar className="navbar">
+          <Navbar.Brand href="/">
+            <img
+              src="../../../Appetitoso_logo_white.svg"
+              alt="appetitoso-logo-pink"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ml-auto">
+              <Nav.Link as="div"> </Nav.Link>
+              <Nav.Link as="div">
+                {" "}
+                <Link to="/signup">Registro</Link>
+              </Nav.Link>
+              <Nav.Link as="div">
+                {" "}
+                <Link to="/login">Inicio sesión</Link>
+              </Nav.Link>
+              {/* <Nav.Link as="small">{greeting}</Nav.Link> */}
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      );
   }
 }
 
