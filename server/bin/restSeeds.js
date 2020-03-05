@@ -11,7 +11,7 @@ const Dish = require("../models/Dish");
 const bcryptSalt = 10;
 
 mongoose
-    .connect('mongodb://localhost/appetitoso', { useNewUrlParser: true })
+    .connect(`${process.env.DB_LOCAL}`, { useNewUrlParser: true })
     .then(x => {
         console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
     })
