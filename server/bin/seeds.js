@@ -1,5 +1,5 @@
 // Seeds file that remove all users and create 10 new users
-
+require('dotenv').config()
 // To execute this seed, run from the root of the project
 // $ node bin/seeds.js
 

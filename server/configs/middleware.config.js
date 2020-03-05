@@ -1,7 +1,5 @@
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const favicon = require('serve-favicon');
-const hbs = require('hbs');
 const logger = require('morgan');
 const path = require('path');
 const express = require('express')
@@ -27,8 +25,6 @@ module.exports = app => {
         sourceMap: true
     }));
 
-
-
     const whitelist = ['http://localhost:3000']
     const corsOptions = {
         origin: (origin, cb) => {
@@ -43,5 +39,5 @@ module.exports = app => {
     app.set('views', path.join(__dirname, '..', 'views'));
     app.set('view engine', 'hbs');
     app.use(express.static(path.join(__dirname, '..', 'public')));
-    app.use(favicon(path.join(__dirname, '..', 'public', 'images', 'favicon.ico')));
+    //app.use(favicon(path.join(__dirname, '..', 'public', 'images', 'favicon.ico')));
 }
