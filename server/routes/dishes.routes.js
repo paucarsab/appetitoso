@@ -14,6 +14,14 @@ router.get('/:id', (req, res, next) => {
     .catch(err => console.log(err))
 })
 
+router.get('/search/:dish', (req, res, next) => {
+  Dish.find({ $or: [{ name: new RegExp(req.params.dish, "gi") }, { ingredients: new RegExp(req.params.dish, "gi") }] })
+    .then(theDish => {
+      res.json(theDish)
+    })
+    .catch(err => console.log(err))
+})
+
 router.post('/new', (req, res, next) => {
   Dish.create(req.body)
     .then(theDish => res.json(theDish))

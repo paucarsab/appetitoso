@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import './App.css';
 
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Homepage from './components/pages/dishList/Homepage'
-// import DishDetails from './components/pages/dishDetails/DishDetails'
 import NavBar from './components/ui/NavBar'
 
 import Signup from './components/pages/auth/signup/Signup'
@@ -15,6 +13,7 @@ import Login from './components/pages/auth/login/Login'
 
 import AuthServices from './services/auth.services'
 import DishList from './components/pages/dishList/DishList';
+import DishDetails from './components/pages/dishDetails/DishDetails';
 
 class App extends Component {
 
@@ -45,11 +44,11 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" render={() => <Homepage loggedInUser={this.state.loggedInUser} />} />
-          {/* <Route path="/detalles/:id" render={props => <DishDetails {...props} />} /> */}
           <Route path="/signup" render={() => <Signup setTheUser={this.setTheUser} />} />
           <Route path="/login" render={props => <Login setTheUser={this.setTheUser} {...props} />} />
           <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
           <Route exact path="/dishes/all" render={() => <DishList loggedInUser={this.state.loggedInUser} />} />
+          <Route path="/dishes/:id" render={props => <DishDetails {...props} />} />
         </Switch>
       </>
 
