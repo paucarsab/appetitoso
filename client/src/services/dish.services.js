@@ -12,4 +12,10 @@ export default class Services {
     getAllDishes = () => this.service.get('/all').then(response => response.data)
     getdishDetails = id => this.service.get(`/${id}`).then(response => response.data)
     postdish = dish => this.service.post(`/new`, dish).then(response => response.data)
+    getSearchDishes = dish => this.service.get(`/search/${dish}`)
+        .then(response => {
+            console.log("hola axios")
+            return response.data
+        })
+        .catch(error => console.log(error))
 }

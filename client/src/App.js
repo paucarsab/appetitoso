@@ -14,6 +14,7 @@ import Login from './components/pages/auth/login/Login'
 import AuthServices from './services/auth.services'
 import DishList from './components/pages/dishList/DishList';
 import DishDetails from './components/pages/dishDetails/DishDetails';
+import DishSearch from './components/pages/dishList/DishSearch';
 
 class App extends Component {
 
@@ -48,10 +49,10 @@ class App extends Component {
           <Route path="/login" render={props => <Login setTheUser={this.setTheUser} {...props} />} />
           <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
           <Route exact path="/dishes/all" render={() => <DishList loggedInUser={this.state.loggedInUser} />} />
+          <Route path="/dishes/search/:dish" render={(match) => <DishSearch {...match} loggedInUser={this.state.loggedInUser} />} />
           <Route path="/dishes/:id" render={props => <DishDetails {...props} />} />
         </Switch>
       </>
-
     )
   }
 }

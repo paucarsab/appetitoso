@@ -15,6 +15,8 @@ router.get('/:id', (req, res, next) => {
 })
 
 router.get('/search/:dish', (req, res, next) => {
+  console.log("hola back route")
+  console.log(req.params.dish)
   Dish.find({ $or: [{ name: new RegExp(req.params.dish, "gi") }, { ingredients: new RegExp(req.params.dish, "gi") }] })
     .then(theDish => {
       res.json(theDish)

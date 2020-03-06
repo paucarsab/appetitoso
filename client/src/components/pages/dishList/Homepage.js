@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
+import SearchBar from "../../ui/SearchBar";
 
 class Homepage extends Component {
   render() {
@@ -15,12 +16,13 @@ class Homepage extends Component {
           <div>
             <h2>Busca entre millones de platos</h2>
             <h3>Busca el lugar, encuentra tu plato</h3>
-            <div className="searchBar">
+            <SearchBar></SearchBar>
+            {/* <div className="searchBar">
               <input type="text" placeholder="Ej. Spaghetti" />
               <Link to="/dishes/all">
                 <button>Buscar</button>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="maxScore">
