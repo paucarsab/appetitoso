@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 import SearchBar from "../../ui/SearchBar";
+import DishBest from "../dishList/DishBest"
 
 class Homepage extends Component {
   render() {
@@ -27,6 +28,7 @@ class Homepage extends Component {
         </div>
         <div className="maxScore">
           <h2>Los platos mejor valorados</h2>
+          <DishBest></DishBest>
         </div>
         <div className="restSignUp">
           <h3>¿Tu restaurante tiene el mejor plato de la ciudad?</h3>
@@ -41,32 +43,8 @@ class Homepage extends Component {
               Madrid
             </h5>
           </div>
-          <div>Copyright© Appetitoso 2020</div>
+          <h5>Copyright © - Appetitoso 2020</h5>
         </footer>
-        {/* {this.props.loggedInUser && <Button className="mb-20" variant="dark" onClick={this.openModal}>Crear Montaña rusa</Button>}
-
-                {this.state.dishes.length ? (
-                    <Row>
-                        {this.state.dishes.map(elm => <DishCard key={elm._id} {...elm} />)}
-                    </Row>
-                )
-                    :
-                    <p>CARGANDO...</p>
-
-                }
-
-
-
-
-
-
-                <Modal show={this.state.showmodal} onHide={this.closeModal}>
-                    <Modal.Body>
-                        <h3>Listado platos</h3>
-                        <hr></hr>
-                        <DishForm closeModal={this.closeModal} refreshList={this.getAllDishes} />
-                    </Modal.Body>
-                </Modal> */}
       </Container>
     );
   }
