@@ -20,14 +20,11 @@ router.get('/:id', (req, res, next) => {
 })
 
 router.get('/search/:dish', (req, res, next) => {
-  Dish.find({ $or: [{ name: new RegExp(req.params.dish, "gi") }, { ingredients: new RegExp(req.params.dish, "gi") }] }).sort({ score: -1 })
+  Dish.find({ $or: [{ name: new RegExp(req.params.dish, "gi") }, { ingredients: new RegExp(req.params.dish, "gi") }] }).sort({ score: -1 }).populate("restaurant_id")
     .then(theDish => {
       res.json(theDish)
     })
-    .catch(err => console.log(err))
 })
-
-
 
 router.post('/new', (req, res, next) => {
   Dish.create(req.body)

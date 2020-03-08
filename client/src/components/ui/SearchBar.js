@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import "./SearchBar.scss";
 
-import { Link } from "react-router-dom";
-
 class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +20,6 @@ class SearchBar extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log("entra");
    this.setState({
        redirect: `/dishes/search/${this.state.search}`
    })

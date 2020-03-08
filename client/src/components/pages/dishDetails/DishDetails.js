@@ -5,19 +5,12 @@ import dishesServices from "../../../services/dish.services";
 import "./dish-details.css";
 
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
-
-import { Link } from "react-router-dom";
 
 class dishDetails extends Component {
   constructor(props) {
     super(props);
     this.state = { dish: {} };
     this.services = new dishesServices();
-
-    console.log("las props por defecto serían estas:", this.props);
   }
 
   componentDidMount = () => this.getdishDetails();
@@ -30,18 +23,16 @@ class dishDetails extends Component {
   };
 
   render() {
-    console.log(this.state.dish.comme);
     return (
-      <Container className="dish-details">
+      <Container className="dish-details" >
         <img src={this.state.dish.photo} alt={this.state.dish.name} />
         <div>
+
           <h1>{this.state.dish.name}</h1>
           <h3>{this.state.dish.restaurant_id}</h3>
           <h3>{this.state.dish.restaurant_id}</h3>
           <h3>Web:{this.state.dish.restaurant_id}</h3>
           <h3>Tlf:{this.state.dish.restaurant_id}</h3>
-          <hr />
-          <hr />
           <h2>Ingredientes:</h2>
           <h3>{this.state.dish.ingredients}</h3>
           <h2>Intolerancias:</h2>

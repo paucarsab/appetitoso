@@ -4,8 +4,7 @@ const authRoutes = express.Router();
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 
-const User = require('../models/User')
-
+const User = require('../models/User');
 
 authRoutes.post('/signup', (req, res, next) => {
 
@@ -15,7 +14,7 @@ authRoutes.post('/signup', (req, res, next) => {
     const email = req.body.email;
 
     if (!username || !password || !email) {
-        console.log("hueco vacio")
+        console.log("Input vacio")
         res.status(400).json({ message: 'Escribe un nombre de usuario, email y contraseña' });
         return;
     }
@@ -98,7 +97,6 @@ authRoutes.post('/login', (req, res, next) => {
         });
     })(req, res, next);
 });
-
 
 
 authRoutes.post('/logout', (req, res, next) => {

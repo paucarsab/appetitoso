@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import DishesServices from "../../../services/dish.services";
 import Row from "react-bootstrap/Row";
 import DishCard from "./DishCard";
+import { Container, Table } from "react-bootstrap";
 
 export default class DishList extends Component {
   constructor(props) {
@@ -24,13 +24,14 @@ export default class DishList extends Component {
 
   render() {
     return (
-      <div>
-        <Row>
-          {this.state.dishes.map(elm => (
-            <DishCard key={elm._id} {...elm} />
+      <Container>
+        <h1>Resultados de la busqueda:</h1>
+        <Table>
+          {this.state.dishes.map(dish => (
+            <tr><DishCard key={dish._id} {...dish} /></tr>
           ))}
-        </Row>
-      </div>
+        </Table>
+      </Container>
     );
   }
 }

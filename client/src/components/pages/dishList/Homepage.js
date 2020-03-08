@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-import DishesServices from "../../../services/dish.services";
-import DishForm from "../dishForm/DishForm";
 import "./Homepage.scss";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import { Link } from "react-router-dom";
 import SearchBar from "../../ui/SearchBar";
 import DishBest from "../dishList/DishBest"
 
@@ -18,12 +13,6 @@ class Homepage extends Component {
             <h2>Busca entre millones de platos</h2>
             <h3>Busca el lugar, encuentra tu plato</h3>
             <SearchBar></SearchBar>
-            {/* <div className="searchBar">
-              <input type="text" placeholder="Ej. Spaghetti" />
-              <Link to="/dishes/all">
-                <button>Buscar</button>
-              </Link>
-            </div> */}
           </div>
         </div>
         <div className="maxScore">
