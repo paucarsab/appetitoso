@@ -1,0 +1,49 @@
+.dish-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: initial;
+
+    img {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-right: 20px;
+    }
+
+    h1 {
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    li {
+        text-transform: capitalize;
+    }
+}
+
+.intolerances {
+    img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        object-fit: contain;
+        border-radius: 0;
+    }
+}
+
+.details-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Homepage.scss";
 import Container from "react-bootstrap/Container";
 import SearchBar from "../../ui/SearchBar";
-import DishBest from "../dishList/DishBest"
+import DishBest from "../Dish/dishList/DishBest"
 
 class Homepage extends Component {
   render() {

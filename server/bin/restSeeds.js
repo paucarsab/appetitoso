@@ -44,7 +44,7 @@ let restaurants = [
         web: "https://losmontesdegalicia.es/",
         dishes: [],
         food_type: ['Española'],
-        location: [40.4347222, -3.6682905],
+        position: { latitude: 40.4347222, longitude: -3.6682905 },
         status: "active"
     },
     {
@@ -58,7 +58,7 @@ let restaurants = [
         web: "https://www.azoteaforus.com/",
         dishes: [],
         food_type: ['Española'],
-        location: [40.4268137, -3.6988964],
+        position: { latitude: 40.4268137, longitude: -3.6988964 },
         status: "active"
     },
     {
@@ -72,7 +72,7 @@ let restaurants = [
         web: "http://entresantos.es/",
         dishes: [],
         food_type: ['Española'],
-        location: [40.4214256, -3.6986669],
+        position: { latitude: 40.4214256, longitude: -3.6986669 },
         status: "active"
     },
     {
@@ -86,7 +86,7 @@ let restaurants = [
         web: "http://restaurantedcorazon.com/",
         dishes: [],
         food_type: ['Española'],
-        location: [40.4157812, -3.706545],
+        position: { latitude: 40.4157812, longitude: -3.706545 },
         status: "active"
     },
     {
@@ -100,7 +100,7 @@ let restaurants = [
         web: "https://www.elsocialrestaurante.com/",
         dishes: [],
         food_type: ['Española'],
-        location: [40.4096461, -3.7078816],
+        position: { latitude: 40.4096461, longitude: -3.7078816 },
         status: "active"
     },
     {
@@ -114,7 +114,7 @@ let restaurants = [
         web: "http://www.fortunyrestaurantclub.com/",
         dishes: [],
         food_type: ['Española'],
-        location: [40.434559, -3.689976],
+        position: { latitude: 40.434559, longitude: -3.689976 },
         status: "active"
     },
     {
@@ -126,7 +126,7 @@ let restaurants = [
         phone: "+ 34 916 14 44 21",
         dishes: [],
         food_type: ['Española'],
-        location: [40.4192806, -3.6997573],
+        position: { latitude: 40.4192806, longitude: -3.6997573 },
         status: "active"
     },
     {
@@ -140,7 +140,7 @@ let restaurants = [
         web: "https://www.facebook.com/Restaurante-Nuevo-Horno-De-Santa-Teresa-423455807723916/?utm_source=tripadvisor&utm_medium=referral",
         dishes: [],
         food_type: ['Española'],
-        location: [40.4256736, -3.6978997],
+        position: { latitude: 40.4256736, longitude: -3.6978997 },
         status: "active"
     },
     {
@@ -154,7 +154,7 @@ let restaurants = [
         web: "http://restaurantealgarabia.com/",
         dishes: [],
         food_type: ['Española'],
-        location: [40.417457, -3.7104709],
+        position: { latitude: 40.417457, longitude: -3.7104709 },
         status: "active"
     },
     {
@@ -168,7 +168,7 @@ let restaurants = [
         web: "https://tabernalagaditana.com/",
         dishes: [],
         food_type: ['Española'],
-        location: [40.4361474, -3.6909359],
+        position: { latitude: 40.4361474, longitude: -3.6909359 },
         status: "active"
     },
     {
@@ -182,7 +182,7 @@ let restaurants = [
         web: "https://www.pizzatrescruces.com/",
         dishes: [],
         food_type: ['Italiana'],
-        location: [40.4192597, -3.7055965],
+        position: { latitude: 40.4192597, longitude: -3.7055965 },
         status: "active"
     },
     {
@@ -196,7 +196,7 @@ let restaurants = [
         web: "https://gustazio.com/",
         dishes: [],
         food_type: ['Italiana'],
-        location: [40.3882719, -3.6931193],
+        position: { latitude: 40.3882719, longitude: -3.6931193 },
         status: "active"
     },
     {
@@ -210,7 +210,7 @@ let restaurants = [
         web: "https://www.pastamore.es/",
         dishes: [],
         food_type: ['Italiana'],
-        location: [40.4276872, -3.6721263],
+        position: { latitude: 40.4276872, longitude: -3.6721263 },
         status: "active"
     },
     {
@@ -224,7 +224,7 @@ let restaurants = [
         web: "http://davantirestaurante.com/",
         dishes: [],
         food_type: ['Italiana'],
-        location: [40.4221091, -3.6990247],
+        position: { latitude: 40.4221091, longitude: -3.6990247 },
         status: "active"
     },
     {
@@ -238,7 +238,7 @@ let restaurants = [
         web: "http://bombardinocafe.com/",
         dishes: [],
         food_type: ['Italiana'],
-        location: [40.4101527, -3.6999755],
+        position: { latitude: 40.4101527, longitude: -3.6999755 },
         status: "active"
     },
     {
@@ -252,7 +252,7 @@ let restaurants = [
         web: "https://www.oven.es/",
         dishes: [],
         food_type: ['Italiana'],
-        location: [40.4250444, -3.7028334],
+        position: { latitude: 40.4250444, longitude: -3.7028334 },
         status: "active"
     },
     {
@@ -266,7 +266,7 @@ let restaurants = [
         web: "https://www.malafemmena.com/",
         dishes: [],
         food_type: ['Italiana'],
-        location: [40.4264268, -3.6704888],
+        position: { latitude: 40.4264268, longitude: -3.6704888 },
         status: "active"
     },
     {
@@ -280,7 +280,7 @@ let restaurants = [
         web: "http://www.fratellimadrid.es/",
         dishes: [],
         food_type: ['Italiana'],
-        location: [40.3895393, -3.7625954],
+        position: { latitude: 40.3895393, longitude: -3.7625954 },
         status: "active"
     },
     {
@@ -294,7 +294,7 @@ let restaurants = [
         web: "http://www.oven.es/",
         dishes: [],
         food_type: ['Italiana'],
-        location: [40.4094417, -3.6954994],
+        position: { latitude: 40.4094417, longitude: -3.6954994 },
         status: "active"
     },
     {
@@ -308,7 +308,7 @@ let restaurants = [
         web: "http://www.lapizzateca.com/",
         dishes: [],
         food_type: ['Italiana'],
-        location: [40.4127497, -3.7014739],
+        position: { latitude: 40.4127497, longitude: -3.7014739 },
         status: "active"
     },
     {
@@ -322,7 +322,7 @@ let restaurants = [
         web: "https://www.steakburger.es/",
         dishes: [`${arrDish[0]}`, `${arrDish[1]}`, `${arrDish[2]}`, `${arrDish[3]}`, `${arrDish[4]}`, `${arrDish[46]}`, `${arrDish[47]}`, `${arrDish[48]}`],
         food_type: ['Americana'],
-        location: [40.4198256, -3.7016268],
+        position: { latitude: 40.4198256, longitude: -3.7016268 },
         status: "active"
     },
     {
@@ -336,7 +336,7 @@ let restaurants = [
         web: "https://www.alright.es/",
         dishes: [`${arrDish[15]}`, `${arrDish[16]}`, `${arrDish[17]}`, `${arrDish[18]}`, `${arrDish[19]}`],
         food_type: ['Americana'],
-        location: [40.4826141, -3.703422],
+        position: { latitude: 40.4826141, longitude: -3.703422 },
         status: "active"
     },
     {
@@ -350,7 +350,7 @@ let restaurants = [
         web: "https://www.steakburger.es/",
         dishes: [`${arrDish[5]}`, `${arrDish[6]}`, `${arrDish[7]}`, `${arrDish[8]}`, `${arrDish[9]}`],
         food_type: ['Americana'],
-        location: [40.4198392, -3.709454],
+        position: { latitude: 40.4198392, longitude: -3.709454 },
         status: "active"
     },
     {
@@ -364,7 +364,7 @@ let restaurants = [
         web: "https://www.sublimedreamsfood.es/",
         dishes: [`${arrDish[19]}`, `${arrDish[20]}`, `${arrDish[21]}`, `${arrDish[22]}`],
         food_type: ['Americana'],
-        location: [40.4137879, -3.7092548],
+        position: { latitude: 40.4137879, longitude: -3.7092548 },
         status: "active"
     },
     {
@@ -378,7 +378,7 @@ let restaurants = [
         web: "http://www.burnoutburgers.com/",
         dishes: [`${arrDish[23]}`, `${arrDish[24]}`, `${arrDish[25]}`, `${arrDish[26]}`, `${arrDish[27]}`],
         food_type: ['Americana'],
-        location: [40.4482189, -3.7351619],
+        position: { latitude: 40.4482189, longitude: -3.7351619 },
         status: "active"
     },
     {
@@ -392,7 +392,7 @@ let restaurants = [
         web: "http://madrestaurants.com/",
         dishes: [`${arrDish[28]}`, `${arrDish[29]}`, `${arrDish[30]}`, `${arrDish[31]}`, `${arrDish[32]}`],
         food_type: ['Americana'],
-        location: [40.4122713, -3.7110625],
+        position: { latitude: 40.4122713, longitude: -3.7110625 },
         status: "active"
     },
     {
@@ -406,7 +406,7 @@ let restaurants = [
         web: "https://www.foodtruckburger.es/",
         dishes: [`${arrDish[33]}`, `${arrDish[34]}`, `${arrDish[35]}`, `${arrDish[36]}`],
         food_type: ['Americana'],
-        location: [40.4237621, -3.6984147],
+        position: { latitude: 40.4237621, longitude: -3.6984147 },
         status: "active"
     },
     {
@@ -420,7 +420,7 @@ let restaurants = [
         web: "https://mayesbistro.es/",
         dishes: [`${arrDish[37]}`, `${arrDish[38]}`, `${arrDish[39]}`, `${arrDish[40]}`, `${arrDish[41]}`, `${arrDish[42]}`, `${arrDish[43]}`],
         food_type: ['Americana'],
-        location: [40.4693371, -3.7315906],
+        position: { latitude: 40.4693371, longitude: -3.7315906 },
         status: "active"
     },
     {
@@ -434,7 +434,7 @@ let restaurants = [
         web: "https://www.steakburger.es/",
         dishes: [`${arrDish[10]}`, `${arrDish[11]}`, `${arrDish[12]}`, `${arrDish[13]}`, `${arrDish[14]}`],
         food_type: ['Americana'],
-        location: [40.4302968, -3.702878],
+        position: { latitude: 40.4302968, longitude: -3.702878 },
         status: "active"
     },
 ]
@@ -817,7 +817,7 @@ let dishes = [
     {
         _id: arrDish[34],
         name: "Hamburguesa Honolulu",
-        photo: "https://just-eat-prod-eu-res.cloudinary.com/image/upload/c_fill,d_es:cuisines:americana-4.jpg,f_auto,q_auto,w_500/v1/es/restaurants/24064.jpg",
+        photo: "https://media-cdn.tripadvisor.com/media/photo-w/1a/4e/2b/7f/foodtruck.jpg",
         ingredients: ["carne de vaca", "queso provolone", "piña"],
         restaurant_id: `${arrRest[26]}`,
         intolerances: ["Sulphur Dioxide", "Dairy"],
@@ -828,7 +828,7 @@ let dishes = [
     {
         _id: arrDish[35],
         name: "Hamburguesa Portobello",
-        photo: "https://just-eat-prod-eu-res.cloudinary.com/image/upload/c_fill,d_es:cuisines:americana-4.jpg,f_auto,q_auto,w_500/v1/es/restaurants/24064.jpg",
+        photo: "https://media-cdn.tripadvisor.com/media/photo-m/1280/19/27/f1/d1/foodtruck.jpg",
         ingredients: ["carne de vaca", "queso cheddar con cerveza Guiness", "champiñon portobello"],
         restaurant_id: `${arrRest[26]}`,
         intolerances: ["Sulphur Dioxide", "Dairy"],
@@ -839,7 +839,7 @@ let dishes = [
     {
         _id: arrDish[36],
         name: "Hamburguesa Goat",
-        photo: "https://just-eat-prod-eu-res.cloudinary.com/image/upload/c_fill,d_es:cuisines:americana-4.jpg,f_auto,q_auto,w_500/v1/es/restaurants/24064.jpg",
+        photo: "https://media-cdn.tripadvisor.com/media/photo-w/1a/38/bf/ee/photo2jpg.jpg",
         ingredients: ["carne de vaca", "queso cabra", "cebolla caramelizada", "lechugas", "frutos secos"],
         restaurant_id: `${arrRest[26]}`,
         intolerances: ["Sulphur Dioxide", "Dairy", "Tree Nuts", "Peanuts"],

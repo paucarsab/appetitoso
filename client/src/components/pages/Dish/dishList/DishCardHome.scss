@@ -1,0 +1,48 @@
+.card-dishHome {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 220px;
+    width: 20vw;
+
+    .photo {
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+
+    h2 {
+        color: #4F4F4F;
+        font-size: 1em;
+        font-weight: 700;
+        margin: 10px;
+    }
+
+    .scoreBest {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+
+        img {
+            margin: 0px;
+            width: 40%;
+            padding-right: 10px;
+        }
+
+        h3 {
+            margin: 0px;
+            font-size: 1em;
+        }
+    }
+}
+
+.b-Best {
+    background-color: #EB5757;
+    border: 0;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+}

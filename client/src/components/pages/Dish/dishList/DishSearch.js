@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DishesServices from "../../../services/dish.services";
+import DishesServices from "../../../../services/dish.services";
 import { Container, Table } from "react-bootstrap";
 import DishCard from "./DishCard";
 

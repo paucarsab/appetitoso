@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 
-import DishesServices from '../../../services/dish.services'
+import RestServices from '../../../../services/rest.services'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-import FilesServices from '../../../services/files.services'
+import FilesServices from '../../../../services/files.services'
 
-class DishForm extends Component {
+class RestForm extends Component {
 
     constructor(props) {
         super(props)
-        this.dishServices = new DishesServices()
+        this.dishServices = new RestServices()
         this.filesServices = new FilesServices()
         this.state = {
-            dish: {
+            rest: {
                 title: '',
                 description: '',
                 length: '',
@@ -29,8 +29,8 @@ class DishForm extends Component {
         this.props.refreshList()
     }
 
-    postDish = () => {
-        this.dishServices.postDish(this.state.dish)
+    postRest = () => {
+        this.dishServices.postRest(this.state.rest)
             .then(() => this.finishAction())
             .catch(err => console.log(err))
     }
@@ -38,13 +38,13 @@ class DishForm extends Component {
     handleChange = e => {
         let { name, value } = e.target
         this.setState({
-            dish: { ...this.state.dish, [name]: value }
+            rest: { ...this.state.rest, [name]: value }
         })
     }
 
     handleSubmit = e => {
         e.preventDefault()
-        this.postDish()
+        this.postRest()
     }
 
     handleFileUpload = e => {
@@ -54,7 +54,7 @@ class DishForm extends Component {
             .then(response => {
                 console.log('Subida de archivo finalizada! La URL de Cloudinray es: ', response.secure_url)
                 this.setState({
-                    dish: { ...this.state.dish, imageUrl: response.secure_url }
+                    rest: { ...this.state.rest, imageUrl: response.secure_url }
                 })
             })
             .catch(err => console.log(err))
@@ -66,30 +66,30 @@ class DishForm extends Component {
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
                     <Form.Label>Nombre</Form.Label>
-                    <Form.Control type="text" name="title" value={this.state.dish.title} onChange={this.handleChange} />
+                    <Form.Control type="text" name="title" value={this.state.rest.title} onChange={this.handleChange} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Descripción</Form.Label>
-                    <Form.Control type="text" name="description" value={this.state.dish.description} onChange={this.handleChange} />
+                    <Form.Control type="text" name="description" value={this.state.rest.description} onChange={this.handleChange} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Longitud</Form.Label>
-                    <Form.Control type="number" name="length" value={this.state.dish.length} onChange={this.handleChange} />
+                    <Form.Control type="number" name="length" value={this.state.rest.length} onChange={this.handleChange} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Inversiones</Form.Label>
-                    <Form.Control type="number" name="inversions" value={this.state.dish.inversions} onChange={this.handleChange} />
+                    <Form.Control type="number" name="inversions" value={this.state.rest.inversions} onChange={this.handleChange} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Imagen</Form.Label>
                     <Form.Control type="file" name="imageUrl" onChange={this.handleFileUpload} />
-                    {/* <Form.Control type="text" name="imageUrl" value={this.state.dish.imageUrl} onChange={this.handleChange} /> */}
+                    {/* <Form.Control type="text" name="imageUrl" value={this.state.rest.imageUrl} onChange={this.handleChange} /> */}
                 </Form.Group>
 
-                <Button variant="dark" type="submit">Crear nueva Montaña</Button>
+                <Button variant="dark" type="submit">Crear nuevo restaurante</Button>
             </Form>
         )
     }
 }
 
-export default DishForm
+export default RestForm

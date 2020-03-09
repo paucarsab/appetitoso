@@ -6,8 +6,6 @@ import Button from "react-bootstrap/Button";
 
 import { Link } from "react-router-dom";
 
-
-
 const DishCard = ({
   name,
   photo,
@@ -19,7 +17,9 @@ const DishCard = ({
 }) => {
   return (
     <tr className="card-dish">
-      <td><img src={photo} alt="" /></td>
+      <td>
+        <img src={photo} alt="" />
+      </td>
       <td>
         <h2>{name}</h2>
         <h3>{restaurant_id.name}</h3>

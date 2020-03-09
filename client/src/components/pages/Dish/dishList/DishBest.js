@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DishesServices from "../../../services/dish.services";
+import DishesServices from "../../../../services/dish.services";
 import Row from "react-bootstrap/Row";
 import DishCardHome from "./DishCardHome";
 import "./DishBest.scss";

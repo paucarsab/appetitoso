@@ -11,7 +11,10 @@ const restSchema = new Schema({
     web: String,
     dishes: [{ type: Schema.Types.ObjectId, ref: "Dish" }],
     food_type: { type: [String], enum: ['Española', 'Italiana', 'Mexicana', 'Americana', 'Japonesa', 'China', 'Turca', 'Centroamericana', 'Sudamericana', 'Centroeuropea'] },
-    location: { type: [Number], required: true }, // [Long, Lat]
+    position: {
+        latitude: Number,
+        longitude: Number
+    },
     status: { type: String, enum: ['active', 'inactive'], default: 'inactive' }
 }, {
     timestamps: {

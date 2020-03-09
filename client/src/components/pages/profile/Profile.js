@@ -1,5 +1,5 @@
 import React from "react";
-import DishCard from "../dishList/DishCard";
+import DishCard from "../Dish/dishList/DishCard";
 import "./Profile.scss";
 
 const Profile = props => (

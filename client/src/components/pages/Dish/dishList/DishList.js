@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DishesServices from "../../../services/dish.services";
+import DishesServices from "../../../../services/dish.services";
 import Row from "react-bootstrap/Row";
 import DishCard from "./DishCard";
 import { Container, Table } from "react-bootstrap";
@@ -28,7 +28,9 @@ export default class DishList extends Component {
         <h1>Resultados de la busqueda:</h1>
         <Table>
           {this.state.dishes.map(dish => (
-            <tr><DishCard key={dish._id} {...dish} /></tr>
+            <tr>
+              <DishCard key={dish._id} {...dish} />
+            </tr>
           ))}
         </Table>
       </Container>

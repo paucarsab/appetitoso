@@ -14,7 +14,7 @@ router.get('/score', (req, res, next) => {
 })
 
 router.get('/:id', (req, res, next) => {
-  Dish.findById(req.params.id)
+  Dish.findById(req.params.id).populate("restaurant_id").sort({ score: -1 })
     .then(theDish => res.json(theDish))
     .catch(err => console.log(err))
 })
