@@ -12,8 +12,8 @@ const restSchema = new Schema({
     dishes: [{ type: Schema.Types.ObjectId, ref: "Dish" }],
     food_type: { type: [String], enum: ['Española', 'Italiana', 'Mexicana', 'Americana', 'Japonesa', 'China', 'Turca', 'Centroamericana', 'Sudamericana', 'Centroeuropea'] },
     position: {
-        latitude: Number,
-        longitude: Number
+        lat: Number,
+        lng: Number
     },
     status: { type: String, enum: ['active', 'inactive'], default: 'inactive' }
 }, {

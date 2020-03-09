@@ -6,6 +6,7 @@ import "./rest-details.scss";
 import "../../Dish/dishList/DishCard.scss";
 
 import DishCard from "../../Dish/dishList/DishCard";
+import SimpleMap from "../../Map/GoogleMap"
 
 import { Container, Table } from "react-bootstrap";
 
@@ -47,6 +48,7 @@ class restDetails extends Component {
               <h3>Tipo de comida: {this.state.rest.food_type}</h3>
             </div>
             <div className="restMap">
+              <SimpleMap pos={this.state.rest.position}></SimpleMap>
             </div>
             <hr />
             <h2>Descubre los platos de este restaurante:</h2>
