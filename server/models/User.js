@@ -8,7 +8,7 @@ const userSchema = new Schema({
     type: String, default: "https://res.cloudinary.com/dtdx0w1qa/image/upload/v1583151595/Appetitoso/profile_photo_vrjsfs.png"
   },
   email: { type: String, required: true },
-  favDishes: [],
+  favDishes: [{ dish: { type: Schema.Types.ObjectId, ref: "Dish" }, score: Number, comment: String }],
   status: {
     type: String,
     enum: ["inactive", "active"],

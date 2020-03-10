@@ -52,16 +52,18 @@ class restDetails extends Component {
             </div>
             <hr />
             <h2>Descubre los platos de este restaurante:</h2>
-            <Table>
-              <tbody>
-                {this.state.rest.dishes.map(elm => (
-                  <DishCard key={elm._id} {...elm} />
-                ))}
-              </tbody>
-            </Table>
+            <Container>
+              <Table>
+                <tbody>
+                  {this.state.rest.dishes.map(elm => (
+                    <DishCard key={elm._id} {...elm} />
+                  ))}
+                </tbody>
+              </Table>
+            </Container>
           </div>
         ) : (
-            console.log("El objecto está vacio")
+            console.log("")
           )}
       </Container>
     );

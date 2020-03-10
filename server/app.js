@@ -19,6 +19,7 @@ app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/dishes', require('./routes/dishes.routes'))
 app.use('/api/rest', require('./routes/rest.routes'))
 app.use('/api/files', require('./routes/files.routes.js'))
+app.use('/api/edit', require('./routes/edit.routes.js'))
 
 //Index a enviar
 app.use((req, res) => {

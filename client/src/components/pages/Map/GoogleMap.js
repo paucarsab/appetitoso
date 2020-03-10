@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 import restServices from "../../../services/rest.services";
+import Marker from "./Marker";
 
 require("dotenv").config();
 
@@ -11,7 +12,7 @@ class SimpleMap extends Component {
     super(props);
     this.state = {
       center: { lat: null, lng: null },
-      zoom: 15
+      zoom: 17
     };
     this.services = new restServices();
   }
@@ -30,7 +31,6 @@ class SimpleMap extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: "50vh", width: "100%" }}>
@@ -40,14 +40,14 @@ class SimpleMap extends Component {
             defaultCenter={this.state.center}
             defaultZoom={this.state.zoom}
           >
-            <AnyReactComponent
+            <Marker
               lat={Number(this.state.center.lat)}
               lng={Number(this.state.center.lng)}
-              text="My Marker"
+              text="Marker"
             />
           </GoogleMapReact>
         ) : (
-          console.log("El objecto está vacio")
+          console.log("No data received")
         )}
       </div>
     );

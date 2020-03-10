@@ -52,7 +52,7 @@ class App extends Component {
           <Route exact path="/dishes/all" render={() => <DishList loggedInUser={this.state.loggedInUser} />} />
           <Route exact path="/rest/all" render={() => <DishList loggedInUser={this.state.loggedInUser} />} />
           <Route path="/dishes/search/:dish" render={(match) => <DishSearch {...match} loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/dishes/:id" render={props => <DishDetails {...props} />} />
+          <Route path="/dishes/:id" render={props => <DishDetails loggedInUser={this.state.loggedInUser} {...props} />} />
           <Route path="/rest/:id" render={props => <RestDetails {...props} />} />
         </Switch>
       </>

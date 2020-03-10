@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import dishesServices from "../../../../services/dish.services";
+import editServices from "../../../../services/edit.services";
 
 import "./dish-details.scss";
 
@@ -10,9 +11,29 @@ import Container from "react-bootstrap/Container";
 class dishDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = { dish: null };
+    this.state = { dish: null, user: this.props.loggedInUser };
     this.services = new dishesServices();
+    this.editServices = new editServices;
   }
+
+  handleChange = e => {
+    let { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.postfavDish();
+  };
+
+  postfavDish = () => {
+    let newFavDish = {
+      dish: this.state.dish._id,
+      score: this.state.score,
+      comment: this.state.comment
+    };
+    this.editServices.getNewFavDish(this.state.user._id, newFavDish);
+  };
 
   componentDidMount = () => this.getdishDetails();
 
@@ -168,9 +189,22 @@ class dishDetails extends Component {
               </div>
               <div>
                 <h1>Precio: {this.state.dish.price} €</h1>
-                <Link to={`/rest/${this.state.dish.restaurant_id._id}`}><h3>Ver más de este restaurante ></h3></Link>
+                <Link to={`/rest/${this.state.dish.restaurant_id._id}`}>
+                  <h3>Ver más de este restaurante ></h3>
+                </Link>
               </div>
             </div>
+            <form onSubmit={e => this.handleSubmit(e)}>
+              Score:{" "}
+              <input name="score" type="number" onChange={this.handleChange} />
+              Comment:{" "}
+              <input
+                name="comment"
+                type="TextArea"
+                onChange={this.handleChange}
+              />
+              <button>Enviar</button>
+            </form>
           </div>
         ) : (
             console.log("El objecto está vacio")

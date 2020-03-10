@@ -10,7 +10,11 @@ const Profile = props => (
     <h3>Tus platos guardados:</h3>
     <div>
       {props.loggedInUser.favDishes.map(dish => (
-        <DishCard key={dish._id} {...dish} />
+        <div>
+          <h2>{dish._id}</h2>
+          <h2>{dish.score}</h2>
+          <h2>{dish.comment}</h2>
+        </div>
       ))}
     </div>
   </div>

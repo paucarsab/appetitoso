@@ -8,7 +8,10 @@ const dishSchema = new Schema({
     restaurant_id: { type: Schema.Types.ObjectId, ref: "Restaurant" },
     intolerances: { type: [String], enum: ['Gluten', 'Shellfish', 'Egg', 'Fish', 'Peanuts', 'Soy', 'Dairy', 'Tree Nuts', 'Celery', 'Mustard', 'Sesame', 'Sulphur Dioxide', 'Lupin', 'Molluscs'] },
     score: [Number],
-    comments: [{ user: { type: Schema.Types.ObjectId, ref: "User" }, content: String }],
+    comments: [{ 
+        user: { type: Schema.Types.ObjectId, ref: "User" }, 
+        comment: String 
+    }],
     price: Number
 }, {
     timestamps: {

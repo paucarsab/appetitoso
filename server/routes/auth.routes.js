@@ -5,6 +5,7 @@ const passport = require('passport');
 const bcrypt = require('bcrypt');
 
 const User = require('../models/User');
+const Dish = require('../models/Dish');
 
 authRoutes.post('/signup', (req, res, next) => {
 
@@ -114,6 +115,13 @@ authRoutes.get('/loggedin', (req, res, next) => {
     }
     res.status(403).json({ message: 'Unauthorized' });
 });
+
+
+authRoutes.get('/profile/:id', (req, res, next) => {
+    User.find({ _id: req.params.id })
+        .populate('favDishes.dish')
+        .then(userFound => res.status(200).json(userFound))
+})
 
 
 
