@@ -13,4 +13,8 @@ export default class Services {
     login = ({ username, password }) => this.service.post('/login', { username, password }).then(response => response.data)
     logout = () => this.service.post('/logout').then(response => response.data)
     loggedin = () => this.service.get('/loggedin').then(response => response.data)
+    getFavDishes = id => this.service.get(`/profile/${id}`).then(response => {
+        return response.data
+    })
+
 }

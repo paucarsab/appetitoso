@@ -48,7 +48,7 @@ class App extends Component {
           <Route exact path="/" render={() => <Homepage loggedInUser={this.state.loggedInUser} />} />
           <Route path="/signup" render={() => <Signup setTheUser={this.setTheUser} />} />
           <Route path="/login" render={props => <Login setTheUser={this.setTheUser} {...props} />} />
-          <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+          <Route path="/profile/:id" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
           <Route exact path="/dishes/all" render={() => <DishList loggedInUser={this.state.loggedInUser} />} />
           <Route exact path="/rest/all" render={() => <DishList loggedInUser={this.state.loggedInUser} />} />
           <Route path="/dishes/search/:dish" render={(match) => <DishSearch {...match} loggedInUser={this.state.loggedInUser} />} />

@@ -43,7 +43,7 @@ class Navigation extends Component {
         <Navbar.Collapse >
           <Nav className="ml-auto">
             <Nav.Link as="div">
-              <Link to="/profile">{greeting}</Link>
+              <Link to={`/profile/${this.props.loggedInUser._id}`}>{greeting}</Link>
             </Nav.Link>
             <Nav.Link as="div"> </Nav.Link>
             <Nav.Link onClick={this.logout}>Cerrar sesión</Nav.Link>

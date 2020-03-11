@@ -118,10 +118,16 @@ authRoutes.get('/loggedin', (req, res, next) => {
 
 
 authRoutes.get('/profile/:id', (req, res, next) => {
-    User.find({ _id: req.params.id })
+    // console.log(req.params.id)
+    User.findById(req.params.id)
         .populate('favDishes.dish')
-        .then(userFound => res.status(200).json(userFound))
+        .then(userFound => {
+            const favorite = userFound.favDishes
+            console.log(favorite)
+            res.json([favorite])
+        })
 })
+
 
 
 
