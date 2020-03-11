@@ -13,7 +13,7 @@ class dishDetails extends Component {
     super(props);
     this.state = { dish: null, user: this.props.loggedInUser };
     this.services = new dishesServices();
-    this.editServices = new editServices;
+    this.editServices = new editServices();
   }
 
   handleChange = e => {
@@ -42,6 +42,12 @@ class dishDetails extends Component {
       .getdishDetails(this.props.match.params.id)
       .then(thedish => this.setState({ dish: thedish }))
       .catch(err => console.log(err));
+  };
+
+  scoreReduce = x => {
+    let sum = x.reduce((previous, current) => (current += previous));
+    let avg = sum / x.length;
+    return Math.round(avg * 100) / 100;
   };
 
   render() {
@@ -182,7 +188,7 @@ class dishDetails extends Component {
             </div>
             <div className="details-right">
               <div>
-                <h2>{this.state.dish.score}</h2>
+                <h2>{this.scoreReduce(this.state.dish.score)}</h2>
                 {this.state.dish.comments && (
                   <h3>{this.state.dish.comments.length} Comentarios</h3>
                 )}
@@ -205,10 +211,22 @@ class dishDetails extends Component {
               />
               <button>Enviar</button>
             </form>
+
+            <div>
+              <ul>
+                {this.state.dish.comments.map(elm => (
+                  <div>
+                    <img src={elm.user.profile_photo} alt="" />
+                    <li> {elm.user.username} </li>
+                    <li> {elm.comment} </li>
+                  </div>
+                ))}
+              </ul>
+            </div>
           </div>
         ) : (
-            console.log("El objecto está vacio")
-          )}
+          console.log("")
+        )}
       </Container>
     );
   }

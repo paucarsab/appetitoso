@@ -9,10 +9,11 @@ import DishCard from "../../Dish/dishList/DishCard";
 
 const FavDish = ({ name, restaurant_id, photo, comments }) => {
   return (
-    <tr className="card-rest">
-      <h1>{name}</h1>
-      <img src={photo} alt="" />
-    </tr>
+    <div className="dishCommentData">
+      <img src={photo} alt="{name}" />
+      <h3>{name}</h3>
+      <h3>{restaurant_id}</h3>
+    </div>
   );
 };
 

@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 
 const User = require('../models/User');
 const Dish = require('../models/Dish');
+const Restaurant = require('../models/Restaurant');
 
 authRoutes.post('/signup', (req, res, next) => {
 
@@ -118,17 +119,16 @@ authRoutes.get('/loggedin', (req, res, next) => {
 
 
 authRoutes.get('/profile/:id', (req, res, next) => {
-    // console.log(req.params.id)
     User.findById(req.params.id)
         .populate('favDishes.dish')
+        // .populate({
+        //     path: 'favDishes.dish.restaurant_id',
+        //     model: 'Restaurant'
+        // })
         .then(userFound => {
             const favorite = userFound.favDishes
-            console.log(favorite)
             res.json([favorite])
         })
 })
-
-
-
 
 module.exports = authRoutes;

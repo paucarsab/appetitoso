@@ -14,7 +14,7 @@ router.get('/score', (req, res, next) => {
 })
 
 router.get('/:id', (req, res, next) => {
-  Dish.findById(req.params.id).populate("restaurant_id").sort({ score: -1 })
+  Dish.findById(req.params.id).populate("restaurant_id").populate('comments.user').sort({ score: -1 })
     .then(theDish => res.json(theDish))
     .catch(err => console.log(err))
 })
@@ -25,6 +25,16 @@ router.get('/search/:dish', (req, res, next) => {
       res.json(theDish)
     })
 })
+
+
+// router.get('/search/:dish', (req, res, next) => {
+//   Dish.find({ $or: [{ name: new RegExp(req.params.dish, "gi") }, { ingredients: new RegExp(req.params.dish, "gi") }] }).populate("restaurant_id")
+//     .then(let sum = score.reduce((previous, current) => current += previous);
+//   let avg = sum / score.length;)
+//   .then(theDish => {
+//     res.json(theDish)
+//   })
+// })
 
 router.post('/new', (req, res, next) => {
   Dish.create(req.body)

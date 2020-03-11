@@ -41,7 +41,7 @@ class Profile extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="profile">
         {this.state.loggedInUser ? (
           <div>
             <h1>Bienvenido a tu perfil, {this.props.loggedInUser.username}</h1>
@@ -52,7 +52,11 @@ class Profile extends Component {
             <h3>Email: {this.props.loggedInUser.email}</h3>
             <div>
               {this.state.favDishes.map(dish => (
-                <FavDish key={dish._id} {...dish.dish} />
+                <div className="dishData">
+                  <FavDish key={dish._id} {...dish.dish} />
+                  <h3>Puntuación: {dish.score}</h3>
+                  <h3>Comentario: {dish.comment}</h3>
+                </div>
               ))}
             </div>
           </div>
