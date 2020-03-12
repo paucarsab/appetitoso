@@ -3,6 +3,7 @@ import "./Homepage.scss";
 import Container from "react-bootstrap/Container";
 import SearchBar from "../../ui/SearchBar";
 import DishBest from "../Dish/dishList/DishBest"
+import { Link } from "react-router-dom";
 
 class Homepage extends Component {
   render() {
@@ -22,7 +23,9 @@ class Homepage extends Component {
         <div className="restSignUp">
           <h3>¿Tu restaurante tiene el mejor plato de la ciudad?</h3>
           <h3>Compártelo y recibe más clientes</h3>
-          <button>Dar de alta</button>
+          <Link to="/rest/new">
+            <button>Dar de alta</button>
+          </Link>
         </div>
         <footer>
           <div>

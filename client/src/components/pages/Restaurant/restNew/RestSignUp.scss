@@ -1,0 +1,44 @@
+.backFormRest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100vw;
+    height: 80vh;
+    margin: 0;
+    padding: 0;
+}
+
+.form-rest {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    border: solid 1px #E0E0E0;
+
+    h1 {
+        font-size: 1.3em;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    div {
+        padding: 5px 20px;
+    }
+
+    button {
+        width: 10vw;
+    }
+}

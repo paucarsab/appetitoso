@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const Dish = require('../models/Dish');
 const Restaurant = require('../models/Restaurant');
+const { ObjectId } = require('mongodb');
 
 authRoutes.post('/signup', (req, res, next) => {
 
@@ -119,16 +120,45 @@ authRoutes.get('/loggedin', (req, res, next) => {
 
 
 authRoutes.get('/profile/:id', (req, res, next) => {
-    User.findById(req.params.id)
-        .populate('favDishes.dish')
-        // .populate({
-        //     path: 'favDishes.dish.restaurant_id',
-        //     model: 'Restaurant'
-        // })
-        .then(userFound => {
-            const favorite = userFound.favDishes
-            res.json([favorite])
-        })
+    User.aggregate([
+        {
+            '$match': {
+                '_id': new ObjectId(`${req.params.id}`)
+            }
+        }, {
+            '$lookup': {
+                'from': 'dishes',
+                'localField': 'favDishes.dish',
+                'foreignField': '_id',
+                'as': 'userFavDishes'
+            }
+        }, {
+            '$lookup': {
+                'from': 'restaurants',
+                'localField': 'userFavDishes.restaurant_id',
+                'foreignField': '_id',
+                'as': 'favRest'
+            }
+        }
+    ]).exec((err, dishes) => {
+        console.log(dishes)
+        if (err) throw err;
+        res.json({ dishes });
+    })
 })
+
+
+// authRoutes.get('/profile/:id', (req, res, next) => {
+//     User.findById(req.params.id)
+//         .populate('favDishes.dish')
+//         // .populate({
+//         //     path: 'favDishes.dish.restaurant_id',
+//         //     model: 'Restaurant'
+//         // })
+//         .then(userFound => {
+//             const favorite = userFound.favDishes
+//             res.json([favorite])
+//         })
+// })
 
 module.exports = authRoutes;

@@ -7,7 +7,7 @@ import "./Profile.scss";
 class Profile extends Component {
   constructor() {
     super();
-    this.state = { loggedInUser: false, favDishes: [] };
+    this.state = { user: null };
     this.services = new authServices();
   }
 
@@ -18,44 +18,56 @@ class Profile extends Component {
   fetchUser = () => {
     this.services
       .getFavDishes(this.props.loggedInUser._id)
-      .then(favDishes => {
+      .then(userFound => {
         this.setState({
-          loggedInUser: this.props.loggedInUser,
-          favDishes: favDishes[0]
+          user: userFound
         });
       })
-      .catch(() => this.setState({ loggedInUser: false }));
+      .catch(() => this.setState({ user: false }));
   };
-
-  // fetchUser = () => {
-  //   this.services
-  //     .getFavDishes(this.props.loggedInUser._id)
-  //     .then(favDishes => {
-  //       this.setState({
-  //         loggedInUser: this.props.loggedInUser,
-  //         favDishes: favDishes
-  //       });
-  //     })
-  //     .catch(() => this.setState({ loggedInUser: false }));
-  // };
 
   render() {
     return (
-      <Container className="profile">
-        {this.state.loggedInUser ? (
-          <div>
-            <h1>Bienvenido a tu perfil, {this.props.loggedInUser.username}</h1>
-            <img
-              src={this.props.loggedInUser.profile_photo}
-              alt={this.props.loggedInUser.username}
-            />
-            <h3>Email: {this.props.loggedInUser.email}</h3>
+      <Container className="profileCont">
+        {this.state.user ? (
+          <div className="profileCont">
+            <h1>
+              Bienvenido a tu perfil, {this.state.user.dishes[0].username}
+            </h1>
+            <h2>Tus datos de perfil:</h2>
+            <div className="profileData">
+              <img className="profilePhoto"
+                src={this.state.user.dishes[0].profile_photo}
+                alt={this.state.user.dishes[0].username}
+              />
+              <div>
+                <h3>Nombre de usuario: {this.state.user.dishes[0].username}</h3>
+                <h3>Email: {this.state.user.dishes[0].email}</h3>
+              </div>
+            </div>
+            <h2>Estos son tus platos guardados:</h2>
             <div>
-              {this.state.favDishes.map(dish => (
+              {this.state.user.dishes[0].userFavDishes.map((dish, idx) => (
                 <div className="dishData">
-                  <FavDish key={dish._id} {...dish.dish} />
-                  <h3>Puntuación: {dish.score}</h3>
-                  <h3>Comentario: {dish.comment}</h3>
+                  <div>
+                    <FavDish key={dish._id} {...dish} />
+                    <h3>
+                      Restaurante: {this.state.user.dishes[0].favRest[idx].name}
+                    </h3>
+                  </div>
+                  <div>
+                    <h3>
+                      Comentario:
+                      {this.state.user.dishes[0].favDishes[idx].comment}
+                    </h3>
+                    <div>
+                      <h3>Valoración general: {dish.score}</h3>
+                      <h3>
+                        Mi valoración:{" "}
+                        {this.state.user.dishes[0].favDishes[idx].score}
+                      </h3>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

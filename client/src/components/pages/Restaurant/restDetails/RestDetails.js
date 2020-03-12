@@ -5,7 +5,7 @@ import restServices from "../../../../services/rest.services";
 import "./rest-details.scss";
 import "../../Dish/dishList/DishCard.scss";
 
-import DishCard from "../../Dish/dishList/DishCard";
+import DishCardRest from "../../Dish/dishList/DishCardRest";
 import SimpleMap from "../../Map/GoogleMap"
 
 import { Container, Table } from "react-bootstrap";
@@ -56,7 +56,7 @@ class restDetails extends Component {
               <Table>
                 <tbody>
                   {this.state.rest.dishes.map(elm => (
-                    <DishCard key={elm._id} {...elm} />
+                    <DishCardRest key={elm._id} {...elm} />
                   ))}
                 </tbody>
               </Table>

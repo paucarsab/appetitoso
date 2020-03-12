@@ -31,9 +31,11 @@ export default class RestSearch extends Component {
         <h2>Resultados de la busqueda:</h2>
         <Table>
           <tbody>
-            {this.state.rest.map(rest => (
-              <RestCard key={rest._id} {...rest} />
-            ))}
+            {this.state.rest.map(rest => {
+              console.log(rest)
+              return <RestCard key={rest._id} {...rest} />
+            }
+            )}
           </tbody>
         </Table>
       </Container>

@@ -13,7 +13,7 @@ export default class Services {
     getdishDetails = id => this.service.get(`/${id}`).then(response => response.data)
     postdish = dish => this.service.post(`/new`, dish).then(response => response.data)
     getSearchDishes = dish => this.service.get(`/search/${dish}`)
-        .then(response => { return response.data })
+        .then(response => response.data)
         .catch(error => console.log(error))
     getBestDishes = () => this.service.get('/score').then(response => response.data)
 }

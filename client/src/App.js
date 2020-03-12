@@ -16,6 +16,7 @@ import DishList from './components/pages/Dish/dishList/DishList';
 import DishDetails from './components/pages/Dish/dishDetails/DishDetails';
 import DishSearch from './components/pages/Dish/dishList/DishSearch';
 import RestDetails from './components/pages/Restaurant/restDetails/RestDetails'
+import RestSignup from './components/pages/Restaurant/restNew/RestSignUp'
 
 class App extends Component {
 
@@ -43,18 +44,20 @@ class App extends Component {
     return (
       <>
         <NavBar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
-
-        <Switch>
-          <Route exact path="/" render={() => <Homepage loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/signup" render={() => <Signup setTheUser={this.setTheUser} />} />
-          <Route path="/login" render={props => <Login setTheUser={this.setTheUser} {...props} />} />
-          <Route path="/profile/:id" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
-          <Route exact path="/dishes/all" render={() => <DishList loggedInUser={this.state.loggedInUser} />} />
-          <Route exact path="/rest/all" render={() => <DishList loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/dishes/search/:dish" render={(match) => <DishSearch {...match} loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/dishes/:id" render={props => <DishDetails loggedInUser={this.state.loggedInUser} {...props} />} />
-          <Route path="/rest/:id" render={props => <RestDetails {...props} />} />
-        </Switch>
+        <div className="general">
+          <Switch>
+            <Route exact path="/" render={() => <Homepage loggedInUser={this.state.loggedInUser} />} />
+            <Route path="/signup" render={() => <Signup setTheUser={this.setTheUser} />} />
+            <Route path="/login" render={props => <Login setTheUser={this.setTheUser} {...props} />} />
+            <Route path="/profile/:id" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
+            <Route exact path="/dishes/all" render={() => <DishList loggedInUser={this.state.loggedInUser} />} />
+            <Route exact path="/rest/all" render={() => <DishList loggedInUser={this.state.loggedInUser} />} />
+            <Route path="/rest/new" render={() => <RestSignup setTheUser={this.setTheUser} />} />
+            <Route path="/dishes/search/:dish" render={(match) => <DishSearch {...match} loggedInUser={this.state.loggedInUser} />} />
+            <Route path="/dishes/:id" render={props => <DishDetails loggedInUser={this.state.loggedInUser} {...props} />} />
+            <Route path="/rest/:id" render={props => <RestDetails {...props} />} />
+          </Switch>
+        </div>
       </>
     )
   }

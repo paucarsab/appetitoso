@@ -47,3 +47,25 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.commentDetail {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 20px;
+    border: #E0E0E0 1px solid;
+    border-radius: 20px;
+    padding: 10px;
+
+    img {
+        width: 100px;
+        border-radius: 20px;
+        margin-right: 20px;
+    }
+
+    h3 {
+        font-size: 1em;
+        text-transform: capitalize;
+    }
+}

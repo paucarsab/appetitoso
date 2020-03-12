@@ -7,13 +7,15 @@ import DishCard from "../../Dish/dishList/DishCard";
 
 // import { Link } from "react-router-dom";
 
-const FavDish = ({ name, restaurant_id, photo, comments }) => {
+const FavDish = ({ name, restaurant_id, photo, comments, favRest }) => {
+
   return (
-    <div className="dishCommentData">
+
+    < div className="dishCommentData" >
       <img src={photo} alt="{name}" />
       <h3>{name}</h3>
-      <h3>{restaurant_id}</h3>
-    </div>
+
+    </div >
   );
 };
 

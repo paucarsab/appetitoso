@@ -32,7 +32,7 @@ class Navigation extends Component {
       );
 
     return this.props.loggedInUser ? (
-      <Navbar className="navbar" expand="lg" variant="dark">
+      <Navbar className="navbar navbar-default navbar-fixed-top" expand="lg" variant="dark">
         <Navbar.Brand href="/">
           <img
             src="../../../Appetitoso_logo_white.svg"

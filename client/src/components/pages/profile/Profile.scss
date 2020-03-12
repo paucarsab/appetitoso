@@ -1,31 +1,51 @@
-.profile {
+.profileCont {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    margin-top: 80px;
 
-    img {
+    h3 {
+        font-size: 1em;
+    }
+
+    .profilePhoto {
+        width: 200px;
         border-radius: 50%;
+        margin-right: 30px;
+        border: solid 10px #FF4D4D;
+        transition: ease-in-out 1s;
+        margin-bottom: 30px;
+
+        &:hover {
+            width: 250px;
+            transition: ease-in-out 1s;
+        }
+    }
+
+    .profileData {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .dishData {
-        border: grey 1px solid;
+        border: #E0E0E0 1px solid;
         background-color: #ffffff;
         width: 50vw;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         border-radius: 20px;
         margin-bottom: 20px;
-        padding: 10px;
+        padding: 20px;
 
-        h3 {
-            font-size: 1em;
-        }
+
 
         img {
-            width: 50px;
-            height: 50px;
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
             margin-bottom: 20px;
+            border: solid 5px #FF4D4D;
         }
     }
 }
