@@ -5,7 +5,7 @@ import Marker from "./Marker";
 
 require("dotenv").config();
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+// const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class SimpleMap extends Component {
   constructor(props) {
@@ -47,8 +47,8 @@ class SimpleMap extends Component {
             />
           </GoogleMapReact>
         ) : (
-          console.log("No data received")
-        )}
+            console.log("No data received")
+          )}
       </div>
     );
   }

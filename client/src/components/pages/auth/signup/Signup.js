@@ -6,6 +6,8 @@ import Container from 'react-bootstrap/Container'
 
 import AuthServices from '../../../../services/auth.services'
 
+import './Signup.scss'
+
 
 class Signup extends Component {
 
@@ -44,7 +46,7 @@ class Signup extends Component {
 
         return (
 
-            <Container>
+            <div className="SignUp">
 
                 <h1>Registro de usuarios</h1>
 
@@ -64,7 +66,7 @@ class Signup extends Component {
 
                     <Button variant="dark" type="submit">Registrarse</Button>
                 </Form>
-            </Container>
+            </div>
 
         )
     }

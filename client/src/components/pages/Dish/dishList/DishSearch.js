@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import DishesServices from "../../../../services/dish.services";
-import { Container, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import DishCard from "./DishCard";
+import './DishSearch.scss'
 
 export default class DishSearch extends Component {
   constructor(props) {
@@ -28,8 +29,8 @@ export default class DishSearch extends Component {
 
   render() {
     return (
-      <Container>
-        <h2>Resultados de la busqueda:</h2>
+      <div className="dishSearch">
+        <h1>Resultados de la busqueda:</h1>
         <Table>
           <tbody>
             {this.state.dishes.map(dish => (
@@ -37,7 +38,7 @@ export default class DishSearch extends Component {
             ))}
           </tbody>
         </Table>
-      </Container>
+      </div>
     );
   }
 }

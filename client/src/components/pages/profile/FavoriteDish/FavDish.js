@@ -1,5 +1,4 @@
 import React from "react";
-import DishCard from "../../Dish/dishList/DishCard";
 
 // import "./RestCard.scss";
 

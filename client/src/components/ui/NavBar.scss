@@ -2,12 +2,13 @@
     position: fixed;
     width: 100vw;
     background-color: #FF4D4D;
-    height: 80px;
+    min-height: 80px;
     top: 0;
     color: #FFFFFF;
 
     img {
         height: 50px;
+        transition: ease-in-out 1s;
     }
 
     .prueba {

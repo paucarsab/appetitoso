@@ -52,7 +52,7 @@ class restDetails extends Component {
             </div>
             <hr />
             <h2>Descubre los platos de este restaurante:</h2>
-            <Container>
+            <div>
               <Table>
                 <tbody>
                   {this.state.rest.dishes.map(elm => (
@@ -60,7 +60,7 @@ class restDetails extends Component {
                   ))}
                 </tbody>
               </Table>
-            </Container>
+            </div>
           </div>
         ) : (
             console.log("")
