@@ -6,8 +6,6 @@ import editServices from "../../../../services/edit.services";
 
 import "./dish-details.scss";
 
-import Container from "react-bootstrap/Container";
-
 class dishDetails extends Component {
   constructor(props) {
     super(props);
@@ -52,9 +50,9 @@ class dishDetails extends Component {
 
   render() {
     return (
-      <Container>
+      <div>
         {this.state.dish ? (
-          <div>
+          <div className="dishDetailsGlobal">
             <div className="dish-details">
               <img src={this.state.dish.photo} alt={this.state.dish.name} />
               <div>
@@ -65,8 +63,8 @@ class dishDetails extends Component {
                 <h3>Tlf: {this.state.dish.restaurant_id.phone}</h3>
                 <h2>Ingredientes:</h2>
                 <ul>
-                  {this.state.dish.ingredients.map(elm => (
-                    <li> {elm} </li>
+                  {this.state.dish.ingredients.map((elm, idx) => (
+                    <li key={`ingr${idx}`}>  {elm} </li>
                   ))}
                 </ul>
                 <h2>Intolerancias:</h2>
@@ -196,10 +194,12 @@ class dishDetails extends Component {
                 </h3>
               </div>
               <div className="details-right">
-                <h2>Valoración de los usuarios: {this.scoreReduce(this.state.dish.score)}</h2>
-                {this.state.dish.comments && (
-                  <h3>{this.state.dish.comments.length + 1} Valoraciones</h3>
-                )}
+                <div>
+                  <h2> Valoración de los usuarios: {this.scoreReduce(this.state.dish.score)}</h2>
+                  {this.state.dish.comments && (
+                    <h3>{this.state.dish.comments.length + 1} Valoraciones</h3>
+                  )}
+                </div>
                 <div>
                   <h1>Precio: {this.state.dish.price} €</h1>
                   <Link to={`/rest/${this.state.dish.restaurant_id._id}`}>
@@ -209,17 +209,21 @@ class dishDetails extends Component {
               </div>
             </div>
             <div>
-              <form onSubmit={e => this.handleSubmit(e)}>
+              <form onSubmit={e => this.handleSubmit(e)} className="formComment">
                 <h3>Valoración:</h3>
                 <input
                   name="score"
                   type="number"
+                  className="scoreArea"
+                  min="0"
+                  max="5"
                   onChange={this.handleChange}
                 />
                 <h3>Comentario:</h3>
                 <input
                   name="comment"
                   type="TextArea"
+                  className="textArea"
                   onChange={this.handleChange}
                 />
                 <button>Enviar comentario</button>
@@ -227,9 +231,9 @@ class dishDetails extends Component {
             </div>
             <div>
               {this.state.dish.comments.map(elm => (
-                <div className="commentDetail">
+                <div key={elm.user._id} className="commentDetail">
                   <img src={elm.user.profile_photo} alt="" />
-                  <h3> {elm.user.username}:</h3>
+                  <h3 className="userComment"> {elm.user.username}: </h3>
                   <h3> "{elm.comment}"</h3>
                 </div>
               ))}
@@ -237,8 +241,9 @@ class dishDetails extends Component {
           </div>
         ) : (
             console.log("")
-          )}
-      </Container>
+          )
+        }
+      </div>
     );
   }
 }

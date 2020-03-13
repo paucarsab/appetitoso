@@ -1,4 +1,16 @@
+.dishDetailsGlobal {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 30px;
+    width: 100vw;
+}
+
 .dish-details {
+    width: 100vw;
     display: flex;
     justify-content: space-around;
     align-items: initial;
@@ -57,6 +69,7 @@
     border: #E0E0E0 1px solid;
     border-radius: 20px;
     padding: 10px;
+    width: 85vw;
 
     img {
         width: 100px;
@@ -66,6 +79,66 @@
 
     h3 {
         font-size: 1em;
+        text-transform: initial;
+    }
+
+    .userComment {
         text-transform: capitalize;
+        color: #FF4D4D;
+    }
+
+
+}
+
+.rightCard {
+    border-radius: 0;
+    padding: 0;
+    width: 170px;
+    height: 31px;
+
+    img {
+        padding: 0;
+    }
+
+}
+
+.formComment {
+    margin-top: 30px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100vw;
+
+    h3 {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0;
+        margin-right: 20px;
+    }
+
+    .scoreArea {
+        border: 0;
+        border-bottom: 1px #FF4D4D solid;
+        padding: 0px 10px;
+        margin: 0 20px 0 0;
+    }
+
+    .textArea {
+        border: 0;
+        border-radius: 20px;
+        padding: 20px;
+        width: 500px;
+        min-height: 100px;
+        margin: 0 20px 0 0;
+        resize: vertical;
+    }
+
+    button {
+        border: 0;
+        background-color: #FF4D4D;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 10px;
     }
 }

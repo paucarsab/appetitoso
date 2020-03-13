@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+    margin-top: 100px;
     width: 100vw;
     height: 80vh;
     margin: 0;
@@ -10,7 +11,7 @@
 }
 
 .form-rest {
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -40,5 +41,11 @@
 
     button {
         width: 10vw;
+        border: 0;
+        transition: ease-in-out 0.5s;
+
+        &:hover {
+            background-color: #FF4D4D;
+        }
     }
 }

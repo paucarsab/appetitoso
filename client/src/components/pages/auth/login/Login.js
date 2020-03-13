@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import Container from 'react-bootstrap/Container'
+import { Link } from "react-router-dom";
 
 import AuthServices from '../../../../services/auth.services'
+
+import '../signup/Signup.scss'
 
 class Login extends Component {
 
@@ -42,25 +44,24 @@ class Login extends Component {
     render() {
 
         return (
-
-            <Container>
-
-                <h1>Inicio de sesión</h1>
-
-                <Form onSubmit={this.handleSubmit}>
-                    <Form.Group>
-                        <Form.Label>Usuario</Form.Label>
-                        <Form.Control type="text" name="username" value={this.state.username} onChange={this.handleChange} />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Contraseña</Form.Label>
-                        <Form.Control type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-                    </Form.Group>
-
-                    <Button variant="dark" type="submit">Iniciar sesión</Button>
-                </Form>
-            </Container>
-
+            <div className="signUpGlobal">
+                <div className="SignUp">
+                    <h1>Inicia sesión</h1>
+                    <Form onSubmit={this.handleSubmit}>
+                        <Form.Group>
+                            <Form.Label>Usuario</Form.Label>
+                            <Form.Control type="text" className="inputUp" placeholder="Introduce tu nombre de usuario" name="username" value={this.state.username} onChange={this.handleChange} />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Contraseña</Form.Label>
+                            <Form.Control type="password" className="inputUp" placeholder="Introduce tu contraseña" name="password" value={this.state.password} onChange={this.handleChange} />
+                        </Form.Group>
+                        <Button variant="dark" type="submit">Inicia sesión</Button>
+                    </Form>
+                    <h3>¿Nuevo en Appetitoso?</h3>
+                    <Link to="/signup"><h3 className="redirectLogin">Crear cuenta</h3></Link>
+                </div>
+            </div>
         )
     }
 }

@@ -26,9 +26,15 @@ class Profile extends Component {
       .catch(() => this.setState({ user: false }));
   };
 
+  scoreReduce = x => {
+    let sum = x.reduce((previous, current) => (current += previous));
+    let avg = sum / x.length;
+    return Math.round(avg * 100) / 100;
+  };
+
   render() {
     return (
-      <Container className="profileCont">
+      <div>
         {this.state.user ? (
           <div className="profileCont">
             <h1>
@@ -46,7 +52,7 @@ class Profile extends Component {
               </div>
             </div>
             <h2>Estos son tus platos guardados:</h2>
-            <div>
+            <div className="dishBoxData">
               {this.state.user.dishes[0].userFavDishes.map((dish, idx) => (
                 <div className="dishData">
                   <div>
@@ -55,17 +61,17 @@ class Profile extends Component {
                       Restaurante: {this.state.user.dishes[0].favRest[idx].name}
                     </h3>
                   </div>
-                  <div>
+                  <div className="rightDataDish">
                     <h3>
                       Comentario:
                       {this.state.user.dishes[0].favDishes[idx].comment}
                     </h3>
                     <div>
-                      <h3>Valoración general: {dish.score}</h3>
                       <h3>
                         Mi valoración:{" "}
                         {this.state.user.dishes[0].favDishes[idx].score}
                       </h3>
+                      <h3>Valoración general: {this.scoreReduce(dish.score)}</h3>
                     </div>
                   </div>
                 </div>
@@ -73,9 +79,9 @@ class Profile extends Component {
             </div>
           </div>
         ) : (
-          <div>{console.log("El objecto está vacio")}</div>
-        )}
-      </Container>
+            <div>{console.log("El objecto está vacio")}</div>
+          )}
+      </div>
     );
   }
 }

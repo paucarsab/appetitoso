@@ -28,7 +28,7 @@ class restDetails extends Component {
 
   render() {
     return (
-      <Container>
+      <div>
         {this.state.rest ? (
           <div className="rest-details">
             <div
@@ -39,22 +39,24 @@ class restDetails extends Component {
             >
               <h1>{this.state.rest.name}</h1>
             </div>
-
-            <div>
-              <h3>{this.state.rest.address}</h3>
-              <h3>Tlf: {this.state.rest.phone}</h3>
-              <h3>Web: {this.state.rest.web}</h3>
-              <h3>Email: {this.state.rest.email}</h3>
-              <h3>Tipo de comida: {this.state.rest.food_type}</h3>
-            </div>
-            <div className="restMap">
-              <SimpleMap pos={this.state.rest.position}></SimpleMap>
+            <div className="centralZone">
+              <div className="leftCZ">
+                <h2>Datos del restaurante: </h2>
+                <h3>{this.state.rest.address}</h3>
+                <h3>Tlf: {this.state.rest.phone}</h3>
+                <h3>Web: {this.state.rest.web}</h3>
+                <h3>Email: {this.state.rest.email}</h3>
+                <h3>Tipo de comida: {this.state.rest.food_type}</h3>
+              </div>
+              <div className="restMap">
+                <SimpleMap pos={this.state.rest.position}></SimpleMap>
+              </div>
             </div>
             <hr />
             <h2>Descubre los platos de este restaurante:</h2>
             <div>
               <Table>
-                <tbody>
+                <tbody className="dishRestDet">
                   {this.state.rest.dishes.map(elm => (
                     <DishCardRest key={elm._id} {...elm} />
                   ))}
@@ -65,7 +67,7 @@ class restDetails extends Component {
         ) : (
             console.log("")
           )}
-      </Container>
+      </div>
     );
   }
 }

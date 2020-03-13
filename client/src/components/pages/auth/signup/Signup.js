@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import Container from 'react-bootstrap/Container'
+import { Link } from "react-router-dom";
 
 import AuthServices from '../../../../services/auth.services'
+
+
 
 import './Signup.scss'
 
@@ -45,27 +47,31 @@ class Signup extends Component {
     render() {
 
         return (
+            <div className="signUpGlobal">
+                <div className="SignUp">
 
-            <div className="SignUp">
+                    <h1>Registro de usuarios</h1>
 
-                <h1>Registro de usuarios</h1>
+                    <Form onSubmit={this.handleSubmit}>
+                        <Form.Group>
+                            <Form.Label>Usuario</Form.Label>
+                            <Form.Control className="inputUp" type="text" name="username" value={this.state.username} placeholder="Introduce tu nombre de usuario" onChange={this.handleChange} />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control className="inputUp" type="text" name="email" value={this.state.email} placeholder="Introduce tu email" onChange={this.handleChange} />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Contraseña</Form.Label>
+                            <Form.Control className="inputUp" type="password" name="password" value={this.state.password} placeholder="Escribe tu contraseña" onChange={this.handleChange} />
+                        </Form.Group>
 
-                <Form onSubmit={this.handleSubmit}>
-                    <Form.Group>
-                        <Form.Label>Usuario</Form.Label>
-                        <Form.Control type="text" name="username" value={this.state.username} onChange={this.handleChange} />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="text" name="email" value={this.state.email} onChange={this.handleChange} />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Contraseña</Form.Label>
-                        <Form.Control type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-                    </Form.Group>
-
-                    <Button variant="dark" type="submit">Registrarse</Button>
-                </Form>
+                        <Button variant="dark" type="submit">Crear cuenta</Button>
+                    </Form>
+                    <h3>Al crear la cuenta, aceptas nuestros terminos y condiciones. Por favor, lee nuestra política de privacidad y nuestra política de cookies.</h3>
+                    <h3>¿Ya formas parte de Appetitoso?</h3>
+                    <Link to="/login"><h3 className="redirectLogin">Inicia sesión</h3></Link>
+                </div>
             </div>
 
         )

@@ -33,7 +33,7 @@ const DishCard = ({
         <Button as="div" variant="dark" size="sm">
           <Link to={`/dishes/${_id}`}>Ver más ></Link>
         </Button>
-        <h2>Precio: {price}</h2>
+        <h2>Precio: {price} €</h2>
       </td>
       <td>
         <h3>{Math.round(score * 100) / 100} </h3>

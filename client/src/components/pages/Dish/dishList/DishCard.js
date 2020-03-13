@@ -16,8 +16,6 @@ const DishCard = ({
   comments
 }) => {
 
-  //Realizar: Hay que cambiar el score
-
   return (
     <tr className="card-dish">
       <td>
